@@ -1,0 +1,31 @@
+.modal-container{
+
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    z-index: 9999;
+    width: 100vw;
+    align-items: center ;
+    .modal-container__wrap{
+        align-items: center;
+        width: 90%;
+        border-radius: 9px;
+        background: white;
+        padding: 21px;
+        height: 90%;
+        overflow-y: auto;
+    }
+    button.close{
+        color: white;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        opacity: 1;
+        font-size: 38px;
+        outline: none;
+    }
+} 

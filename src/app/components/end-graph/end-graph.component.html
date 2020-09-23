@@ -1,0 +1,158 @@
+<div class="w-100">
+    <div *ngIf="chart!==undefined && !isMap && chart.type !== 'number'" class="w-100">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="visualTitle">{{chart.title}}</h3>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8 justify-content-end mx-auto">
+                <button tabindex="-1" data-toggle="modal" data-target="#listModal" (click)="updateChart(chart.id)" class="button3 float-right">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <span class="social-media-icons float-right">
+                    <a tabindex="{{openedMenu ? -1 : 0}}" aria-label="Compartir en Facebook" href="https://www.facebook.com/sharer.php?u={{actualRoute}}">
+                        <img alt="Facebook" src="/static/public/contenido-general/social/facebookIcon.png">
+                    </a>
+                </span>
+                <span class="social-media-icons float-right">
+                    <a tabindex="{{openedMenu ? -1 : 0}}" aria-label="Compartir en Twitter" href="https://twitter.com/share?url={{actualRoute}}">
+                        <img alt="Twitter" src="/static/public/contenido-general/social/twitterIcon.png">
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="row mx-auto w-100">
+            <div *ngIf="chart.type=='doughnut'" class="col-sm-12 col-xs-12 col-md-8 col-lg-8 mx-auto graph-donut-container" [ngClass]="(numberLegend>5)?'graph-donut-big-legend':'graph-donut-small-legend'">
+                <canvas baseChart [datasets]="chart.data" [labels]="chart.labels" [options]="chartOptions" [colors]="color" [legend]="chartLegend"
+                    [chartType]="chart.type">
+                </canvas>
+            </div>
+            <div *ngIf="chart.type!='doughnut'" class="col-sm-12 col-xs-12 col-md-8 col-lg-8 mx-auto graph-container" [ngClass]="(numberLegend>5)?'graph-big-legend':'graph-small-legend'">
+                <canvas baseChart [datasets]="chart.data" [labels]="chart.labels" [options]="chartOptions" [colors]="color" [legend]="chartLegend"
+                    [chartType]="chart.type">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="points!==undefined && isMap" class="w-100">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="visualTitle">{{title}}</h3>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8 justify-content-end mx-auto">
+                <button tabindex="-1" data-toggle="modal" data-target="#listModal" (click)="updateChart(chart.id)" class="button3 float-right">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <span class="social-media-icons float-right">
+                    <a tabindex="{{openedMenu ? -1 : 0}}" aria-label="Compartir en Facebook" href="https://www.facebook.com/sharer.php?u={{actualRoute}}">
+                        <img alt="Facebook" src="/static/public/contenido-general/social/facebookIcon.png">
+                    </a>
+                </span>
+                <span class="social-media-icons float-right">
+                    <a tabindex="{{openedMenu ? -1 : 0}}" aria-label="Compartir en Twitter" href="https://twitter.com/share?url={{actualRoute}}">
+                        <img alt="Twitter" src="/static/public/contenido-general/social/twitterIcon.png">
+                    </a>
+                </span>
+            </div>          
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8 mx-auto customHeight">
+                <app-map [descriptionPoints]="descriptions" [points]="points" zoom="7" turnDescript=true></app-map>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="chart!==undefined && !isMap && chart.type === 'number'" class="w-100">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="visualTitle">{{chart.title}}</h3>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8 justify-content-end mx-auto">
+                <button tabindex="-1" data-toggle="modal" data-target="#listModal" (click)="updateChart(chart.id)" class="button3 float-right">
+                    <i class="fa fa-refresh"></i>
+                </button>
+                <span class="social-media-icons float-right">
+                    <a tabindex="{{openedMenu ? -1 : 0}}" aria-label="Compartir en Facebook" href="https://www.facebook.com/sharer.php?u={{actualRoute}}">
+                        <img alt="Facebook" src="/static/public/contenido-general/social/facebookIcon.png">
+                    </a>
+                </span>
+                <span class="social-media-icons float-right">
+                    <a tabindex="{{openedMenu ? -1 : 0}}" aria-label="Compartir en Twitter" href="https://twitter.com/share?url={{actualRoute}}">
+                        <img alt="Twitter" src="/static/public/contenido-general/social/twitterIcon.png">
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="row mx-auto w-100">
+            <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8 mx-auto" style="display: flex;justify-content: center;font-weight: bold;" [style.color]="chart.number.numberColor" [style.font-size]="chart.number.numberSize + 'px'">
+                <div style="margin-right: 8px;">{{ chart.number.number }}</div>
+                <div>{{ chart.number.numberUnits }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="text-center">
+                <button tabindex="{{openedMenu ? -1 : 0}}" (click)="hideEmbedButton(0)" class="btn btn-link">Reutiliza el gráfico</button>
+                <button tabindex="{{openedMenu ? -1 : 0}}" (click)="hideEmbedButton(1)" class="btn btn-link">Fuente de datos</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <span *ngIf="!hideEmbed">
+                    <code>
+                    <div class="border rounded" *ngIf="showData == 0" tabindex="{{openedMenu ? -1 : 0}}">
+                        &lt;iframe src="{{routeEmbed}}" style="width: 100%; height: 100%;" frameborder="0"&gt;&lt;/iframe&gt;
+                    </div>
+                    <div class="border rounded" *ngIf="showData == 1" tabindex="{{openedMenu ? -1 : 0}}">
+                        <ul style="list-style: none;">
+                            <li *ngFor="let dataSource of datasetLocation">
+                                {{ dataSource }}
+                            </li>
+                        </ul>
+                    </div>
+                </code>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="text-center">
+            <div class="alert alert-success" role="alert">
+                La gr&aacute;fica "{{title}}" se va a actualizar.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="virtuosoModal" tabindex="-1" role="dialog" aria-labelledby="virtuosoModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar consulta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea pInputTextarea class="w-100 h-50" [(ngModel)]="dataset"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="callUpdateVirtuoso()" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

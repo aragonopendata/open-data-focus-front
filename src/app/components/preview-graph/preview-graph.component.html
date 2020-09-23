@@ -1,0 +1,217 @@
+
+<div class="row">
+    <div class="col-12 title-container" style="margin-bottom: 10px">
+        <p>
+            <span>1</span>
+            <strong tabindex="{{openedMenu ? -1 : 0}}">Seleccionar tipo de gr&aacute;fica:</strong>
+        </p>
+        <p *ngIf="this.type!=='number'">Las opciones en el mismo orden son: lineal, barras, circular y mapa. </p>
+        <p *ngIf="this.type==='number'">Las opciones en el mismo orden son: lineal, barras, circular, mapa y valor numérico. </p>
+    </div>
+    <div class="col-12 section" style="text-align:center;">
+        <button *ngIf="this.type!=='number'" tabindex="{{openedMenu ? -1 : 0}}" aria-label="Gr&aacute;fico de lineas" (click)="changeChart(0)" class="button">
+            <i class="fa fa-line-chart"></i>
+        </button>
+        <button *ngIf="this.type!=='number'" tabindex="{{openedMenu ? -1 : 0}}" aria-label="Gr&aacute;fico de barras" (click)="changeChart(1)" class="button">
+            <i class="fa fa-bar-chart"></i>
+        </button>
+        <button *ngIf="this.type!=='number'" tabindex="{{openedMenu ? -1 : 0}}" aria-label="Gr&aacute;fico de doughnut" (click)="changeChart(2)" class="button">
+            <i class="fa fa-pie-chart"></i>
+        </button>
+        <button *ngIf="this.type!=='number'" tabindex="{{openedMenu ? -1 : 0}}" aria-label="Mapa de puntos" (click)="changeChart(3)" class="button">
+            <i class="fa fa-map"></i>
+        </button>
+        <button tabindex="{{openedMenu ? -1 : 0}}" aria-label="Gr&aacute;fico de numeros" (click)="changeChart(4)" class="button">
+            <i class="fa fa-sort-numeric-asc"></i>
+        </button>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-12 title-container" style="margin-bottom: 10px">
+        <p>
+            <span>2</span>
+            <strong tabindex="{{openedMenu ? -1 : 0}}">Relaciona los datos:</strong>
+        </p>
+        <p>Arrastra las columnas que deseas representar en los ejes correspondientes.</p>
+    </div>
+    
+    <div class="col-md-4 section">
+        <span class="titleMapper" tabindex="{{openedMenu ? -1 : 0}}"  aria-label="Columnas : Arrastrando de una columna a la siguiente para unir datos.">Columnas</span>
+        <div id='no-drop' class='container' [dragula]='"another-bag"' [dragulaModel]='columns'>
+            <div *ngFor='let text of columns; let i = index' tabindex="{{openedMenu ? -1 : 0}}">
+                {{text}}
+                <span style="float: right; color:rgb(194, 194, 194);">({{columnsType[i]}})</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 section">
+        <div class="row">
+            <div class="col" style="margin-bottom: 10px">
+                <span *ngIf="!chartMap" class="titleMapper" tabindex="{{openedMenu ? -1 : 0}}">Eje Y</span>
+                <span *ngIf="chartMap" class="titleMapper" tabindex="{{openedMenu ? -1 : 0}}">Latitud / Y</span>
+                <span style="font-size: 11; float: right" tabindex="{{openedMenu ? -1 : 0}}">(Arrastrar tipo: Number)</span>
+                <div id='move-1' class='container' [dragula]='"another-bag"' [dragulaModel]='columnsData'>
+                    <div *ngFor='let text of columnsData; let i = index'>
+                        {{text}}
+                        <span class='handleClose' (click)="deleteElement(1, i)">x</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="margin-bottom: 10px" *ngIf="chartType !== 'number'">
+                <span *ngIf="!chartMap" class="titleMapper" tabindex="{{openedMenu ? -1 : 0}}">Eje X</span>
+                <span *ngIf="chartMap" class="titleMapper" tabindex="{{openedMenu ? -1 : 0}}">Longitud / X</span>
+                <span style="font-size: 11; float: right" tabindex="{{openedMenu ? -1 : 0}}">(Arrastrar tipo: Number, String)</span>
+                <div id='move-2' class='container' [dragula]='"another-bag"' [dragulaModel]='columnsLabel'>
+                    <div *ngFor='let text of columnsLabel; let i = index'>
+                        {{text}}
+                        <span class='handleClose' (click)="deleteElement(2, i)">x</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="margin-bottom: 10px" *ngIf="chartMap">
+            <span class="titleMapper" tabindex="{{openedMenu ? -1 : 0}}">Descripci&oacute;n</span>
+            <span style="font-size: 11; float: right" tabindex="{{openedMenu ? -1 : 0}}">(Arrastrar tipo: Number, String)</span>
+            <div id='move-3' class='container' [dragula]='"another-bag"' [dragulaModel]='descriptionPoints'>
+                <div *ngFor='let text of descriptionPoints; let i = index'>
+                    {{text}}
+                    <span class='handleClose' (click)="deleteElement(3, i)">x</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 title-container" style="margin-bottom: 10px">
+        <p>
+            <span>3</span>
+            <strong tabindex="{{openedMenu ? -1 : 0}}">Configura tu gráfica:</strong>
+        </p>
+        <p>Navega entre los distintos valores para configurar y personalizar tu gráfica a medida.</p>
+    </div>
+    <div class="col-md-12 loading" style="margin-bottom: 10px;" *ngIf="loading">
+        <div class="icon-fa fa fa-circle-o-notch fa-spin fa-3x fa-fw" tabindex="{{openedMenu ? -1 : 0}}"></div><br/><br/>
+    </div>
+
+    <div class="col-md-4" style="margin-bottom: 10px;" *ngIf="!loading">
+        <p>
+            <strong tabindex="{{openedMenu ? -1 : 0}}">Configuraci&oacute;n</strong>
+        </p>
+<!--
+        <div style="margin-top:20px" *ngIf="!openedMenu && !chartMap">
+            <p-checkbox [(ngModel)]="axisXActivator" binary="true" (onChange)="onEditComplete($event)" ></p-checkbox>Mostrar Eje X
+        </div>
+    -->
+
+        <div style="margin-top:20px">
+            <p>
+                <strong> - T&iacute;tulo</strong>
+            </p>
+            <input tabindex="{{openedMenu ? -1 : 0}}" aria-label="Editar t&iacute;tulo gr&aacute;fica" type="text" style="width: 100%" [(ngModel)]="title" pInputText>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="chartType != 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}" aria-label="EjeX mostrar elementos"> - Mostrar EjeX</strong>
+            </p>
+            <p-spinner tabindex="{{openedMenu ? -1 : 0}}" class="ui-fluid"  [(ngModel)]="axisXActivator" (onChange)="onEditComplete($event)"></p-spinner>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="!openedMenu && !chartMap && chartType != 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}" aria-label="Editar Agrupar Datos"> - Agrupar por:</strong>
+            </p>
+            <p-dropdown (ngModelChange)="onEditComplete($event)" [(ngModel)]="groupRow" [options]="headersDropdown" class="ui-fluid"></p-dropdown>
+        </div>
+
+        <div *ngIf="chartType != 'doughnut' && chartType != 'number' && !chartMap" style="margin-top:20px">
+            <p>
+                <strong> - Leyenda</strong>
+            </p>
+            <p-dataTable [value]="legend" [editable]="true" (onEditInit)="this.editLeyend=true" (onEditComplete)="onEditComplete($event)" (clickOutside)="saveLeyend($event)">
+                <p-column field="label" header="Leyenda (Modificar)" [editable]="true"></p-column>
+            </p-dataTable>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="chartType == 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}"> - Color del texto</strong>
+            </p>
+            <input [(colorPicker)]="numberColor" [style.background]="numberColor" [style.width]="'100%'"/>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="chartType == 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}"> - Tama&ntilde;o del texto</strong>
+            </p>
+            <p-spinner tabindex="{{openedMenu ? -1 : 0}}" class="ui-fluid" [(ngModel)]="numberSize" [min]="0" [max]="100"></p-spinner>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="chartType == 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}"> - Último valor</strong>
+            </p>
+            <p-dropdown [options]="numberOptions" [(ngModel)]="selectedNumberOption" [style]="{'width':'100%'}" (onChange)="onDrop('refresh')"></p-dropdown>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="chartType != 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}" aria-label="Editar tama&ntilde;o Gr&aacute;fica"> - Tama&ntilde;o Gr&aacute;fica</strong>
+            </p>
+            <p-spinner tabindex="{{openedMenu ? -1 : 0}}" class="ui-fluid" [(ngModel)]="widthGraph"></p-spinner>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="chartType == 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}"> - Unidades</strong>
+            </p>
+            <input tabindex="{{openedMenu ? -1 : 0}}" type="text" style="width: 100%" [(ngModel)]="numberUnits" pInputText>
+        </div>
+
+        <div style="margin-top:20px" *ngIf="!openedMenu && !chartMap && chartType != 'number'">
+            <p>
+                <strong tabindex="{{openedMenu ? -1 : 0}}" aria-label="Editar tama&ntilde;o Gr&aacute;fica"> - Cantidad Datos Gr&aacute;fica</strong>
+            </p>
+            <p-spinner (onChange)="changeDataNumber()" [min]="1"  tabindex="{{openedMenu ? -1 : 0}}" class="ui-fluid" [(ngModel)]="topRows"></p-spinner>
+        </div>
+    </div>
+
+    <div class="col-md-8" style="margin-bottom: 10px;display: flex;flex-direction: column;" [style.width.px]="widthGraph" *ngIf="!loading">
+        <p>
+            <strong>Gr&aacute;fica</strong>
+        </p>
+        <div *ngIf="!chartMap && chartType !== 'number'" style="display: block;">
+            <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend" [chartType]="chartType"
+                [colors]="color"></canvas>
+        </div>
+        <div *ngIf="!chartMap && chartType === 'number'" style="display: flex;justify-content: center;height: 100%;align-items: center;font-weight: bold;" [style.color]="numberColor" [style.font-size]="numberSize + 'px'"
+        >
+            <div style="margin-right: 8px;">{{ chartNumber }}</div>
+            <div>{{ numberUnits }}</div>
+        </div>
+        <div *ngIf="chartMap">
+            <app-map [descriptionPoints]="chartDescriptionPoints" [points]="points" zoom="8" (description)="showDescription($event)"
+                turnDescript=true></app-map>
+        </div>
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-12">
+        <div *ngIf="nextStep!=''" class="alert alert-warning">{{nextStep}}</div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-md-12" style="text-align:center;">
+        <button (click)="goBack()" tabindex="{{openedMenu ? -1 : 0}}" class="button2 float-right">Volver</button>
+        <button [disabled]="clickFinish" tabindex="{{openedMenu ? -1 : 0}}" (click)="next()" class="button">Finalizar</button>
+        
+    </div>
+</div> -->
+
+<div class="row mt-3 justify-content-end">
+    <div class="col-12 justify-content-end" style="text-align:center;">
+        <button (click)="next()" tabindex="{{openedMenu ? -1 : 0}}" class="button2 float-right">Finalizar</button>
+        <button (click)="goBack()" tabindex="{{openedMenu ? -1 : 0}}" class="button2 float-right">Volver</button>
+    </div>
+</div>

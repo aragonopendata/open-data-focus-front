@@ -1,0 +1,122 @@
+  
+<!-- <div class="row ">
+    <h3 class="form-section-title" tabindex="{{openedMenu ? -1 : 0}}">Crear un nuevo contenido</h3>
+</div> -->
+
+<form [formGroup]="contentForm">
+
+
+  <!-- CONTENTS CREATED -->
+
+  <div class="create-history-content__align">
+    <label for="alineacion">
+      <h4 tabindex="{{openedMenu ? -1 : 0}}" class="form-section-title">Alineacion de la sección</h4>
+    </label>
+    <select tabindex="{{openedMenu ? -1 : 0}}" class="form-control select-cat1" id="alineacion" formControlName="align" >
+      <option *ngFor="let align of alignsTypes" [ngValue]="align.type">{{align.text}}</option>
+    </select> 
+  </div>
+
+  <div class="create-history-content" [ngClass]="{'reverse': contentForm && contentForm.get('align').value === AlignEnum.left}">
+      
+    <div class="create-history-content__text">
+
+      <div>
+        <h4 class="form-section-title" tabindex="{{openedMenu ? -1 : 0}}">Título de la sección</h4>
+        <input class="col-12 form-control" type="text" id="title_content" placeholder="Introduzca el título de la sección" formControlName="title" tabindex="{{openedMenu ? -1 : 0}}">
+        <span class="sr-only">Título de la sección</span>
+      </div>
+      
+      <div>
+        <h4 class="form-section-title" tabindex="{{openedMenu ? -1 : 0}}">Contenido de la sección</h4>
+        <angular-tinymce *ngIf="settings"  id="editorContent" [settings]="settings" formControlName="description" tabindex="{{openedMenu ? -1 : 0}}"></angular-tinymce>
+        <span class="sr-only">Contenido de la sección</span>
+      </div>
+
+    </div>
+
+    <div class="create-history-content__visual" tabindex="{{openedMenu ? -1 : 0}}" >
+
+      <h4 class="form-section-title" tabindex="{{openedMenu ? -1 : 0}}">Fuente de datos de la sección</h4>
+
+      <div class="conten-type" *ngFor="let contentType of contentsTypes" id="contents">
+        
+        <div class="radio" >
+          <input type="radio" [value]='contentType.type' id="{{contentType.text}}" formControlName="type_content" (click)="contentForm.controls['visual_content'].reset()"><span>{{contentType.text}}</span>
+          <div *ngIf="contentType.type===2 || contentType.type===3" class="fa fa-info-circle"></div>
+          <div class="help-img"> 
+            <img *ngIf="contentType.type===2" src='/static/public/focus/id_youtube.png'>
+            <img *ngIf="contentType.type===3" src='/static/public/focus/id_slideshare.png'>
+          </div>
+        </div>
+
+      </div> 
+
+      <div class="conten-type-data">
+
+        <div *ngIf="((contentForm.get('type_content').value==1)&&(contentForm.get('type_content').value==contentEnum.graph))">
+          <div class="form-row align-items-center">
+            <div>
+              <p *ngIf="contentModel.visual_content && graphTitle" class="form-section-title font-weight-bold" tabindex="{{openedMenu ? -1 : 0}}">La gr&aacute;fica seleccionada es: {{graphTitle}}</p>
+              <button class="btn-left btn btn-outline-secondary mb-2" type="button" (click)='openVisualData()' tabindex="{{openedMenu ? -1 : 0}}">Añadir o crear gráfico</button>
+              <span class="sr-only">Añadir o crear gráfico</span>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="((contentForm.get('type_content').value==2)&&(contentForm.get('type_content').value==contentEnum.youtube))" >
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend" tabindex="{{openedMenu ? -1 : 0}}">
+                  <div class="input-group-text">https://www.youtube.com/watch?=</div>
+                </div>
+                <input tabindex="{{openedMenu ? -1 : 0}}" type="text" class="form-control" formControlName="visual_content" id="idYoutube" placeholder="Id del video">
+                <span class="sr-only">Id del video de youtube</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="((contentForm.get('type_content').value==3)&&(contentForm.get('type_content').value==contentEnum.shareSlides))">
+          <div class="form-row align-items-center mb-2">
+            <div class="col-auto">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend" tabindex="{{openedMenu ? -1 : 0}}">
+                  <div class="input-group-text">https://www.slideshare.net/slideshow/embed_code/key/</div>
+                </div>
+                <input type="text" class="form-control" formControlName="visual_content" id="idSlideShare" placeholder="Id del Slide share" tabindex="{{openedMenu ? -1 : 0}}">
+                <span class="sr-only">Id del slideshare</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="((contentForm.get('type_content').value==4)&&(contentForm.get('type_content').value==contentEnum.img))">
+          <div class="form-row align-items-center mb-2">
+            <div class="col-auto">
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" formControlName="visual_content" id="imgContent" placeholder="Url de la imagen" tabindex="{{openedMenu ? -1 : 0}}">
+                <span class="sr-only">Url de la imagen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+      
+  </div>
+
+  <small *ngIf="invalidSection" class="text-danger">Debe seleccionar como mínimo un titulo y una descripción o un contenido visual</small>
+
+  <div class="actions">
+    <button type="button" class="btn btn-outline-primary" (click)=closeComponentContent() tabindex="{{openedMenu ? -1 : 0}}"> Cancelar</button>
+    <span class="sr-only">Cancelar crear contenido</span>      
+    <button class="btn-left btn btn-primary" type="submit" (click)='saveContent()' [ngClass]="contentForm.invalid ? 'disabled' : '' " tabindex="{{openedMenu ? -1 : 0}}">Guardar contenido</button>
+    <span class="sr-only">Guardar contenido</span>
+  </div>
+</form>
+
