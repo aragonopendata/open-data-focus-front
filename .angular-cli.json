@@ -10,6 +10,7 @@
       "assets": [
         "assets"
       ],
+      "baseHref": "/",
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -29,7 +30,9 @@
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/chart.js/dist/Chart.bundle.js"
+        "../node_modules/chart.js/dist/Chart.bundle.js",
+        "../node_modules/tinymce/tinymce.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
