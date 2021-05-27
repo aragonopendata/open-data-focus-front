@@ -96,6 +96,7 @@ b {
   font-size: 18px !important;
   a{
     word-break: break-word;
+    color: #0e7ea6;
   }
   
 }
@@ -105,7 +106,93 @@ b {
   text-decoration: underline !important;
 }
 
+@media (min-width: 1200px) {
+    .visualTitle{
+    padding: 30px 15% !important;
+  }
 
-.focus .container-view p{
-  //line-height: 33px !important ;
+  .pagina div p{
+    padding: 30px 15% !important;
+  }
+
+  .container {
+    padding: 30px 15% !important;
+  }
+
+  .view-history-content{
+    padding: 30px 15% !important;
+  }
+  
+}
+
+.container {
+  padding: 30px 5%;
+}
+
+.visualTitle{
+  color: #fff;
+  font-family: "Signika-SemiBold",sans-serif;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  background-color: #333;
+  text-transform: capitalize;
+  margin: -1px auto;
+  padding: 30px 5%;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+
+.visualTitle::before{
+content: '';
+background-image: url(https://svgshare.com/i/X0L.svg);
+background-repeat: no-repeat;
+opacity: .1;
+height: 10rem;
+width: 100%;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-position: -14rem center;
+right: 0;
+}
+
+.btn-primary{
+  background-color: #0e7ea6;
+  border-color: transparent;
+  &:hover{
+    background-color: #0e7ea6;
+  }
+}
+
+.btn-primary:hover{
+  background-color: #0e7ea6;
+  border-color: transparent;
+  border-radius: 0 !important;
+}
+
+.d-block .visualTitle {
+  background-color: transparent;
+  padding: 0;
+}
+
+.card :hover{
+  transform: scale(0);
+  .text>span{
+      font-size: 16px;
+  }
+}
+
+.view-history-content{
+  padding: 30px 5%;
+  background-color: #f2f2f2;
+}
+
+.view-history-container{
+  background-color: #5ea2ba38;
+}
+
+.view-history-category text{
+  color: black;
 }
