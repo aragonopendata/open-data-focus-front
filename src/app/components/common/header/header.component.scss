@@ -1,422 +1,624 @@
-@import "../../../../../node_modules/bootstrap/scss/bootstrap-grid.scss";
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  font-weight: 300;
-}
-
-.card-header a {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.card-header {
-  padding: 1%;
-  background: transparent;
-  border-radius: 0;
-  border: none;
-  border-top: solid 1px white;
-}
-
-.card {
-  background: transparent;
-  border: none;
-}
-
-.card-block {
-  padding: 0;
-  padding-left: 2%;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-.overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.82);
-  overflow: hidden;
-  transition: 0.5s;
-}
-
-.overlay p {
-  cursor: pointer;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.overlay-content {
-  position: relative;
-  width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-.overlay #resultsList {
-  border-bottom: 1px solid white;
-}
-
-.overlay a,
-.overlay li {
-  padding: 2px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.overlay a:hover,
-.overlay a:focus,
-.overlay li:hover,
-.overlay li:focus {
-  color: #f1f1f1;
-}
-/*
-.fixed-top{
-  height: 150px;
-}
-
-@media screen and (max-width: 768px) {
-  .fixed-top{
-    height: 125px;
+/* HEADER */
+@font-face {
+    font-family: "open_sans-semibolditalic";
+    src: url("https://preopendata.aragon.es/static/public/fonts/opensans-semibolditalic.woff2") format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-semibolditalic.woff") format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-semibolditalic.ttf") format("truetype"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-semibolditalic.svg#open_sansextrabold")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
   }
-}*/
-
-@media screen and (max-height: 600px) {
-  input,
-  input::-webkit-input-placeholder {
-    font-size: 50px;
+  
+  @font-face {
+    font-family: "open_sans";
+    src: url("https://preopendata.aragon.es/static/public/fonts/opensans-regular-webfont.woff2")
+        format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-regular-webfont.woff") format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-regular-webfont.ttf") format("truetype"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-regular-webfont.svg#open_sansregular")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
   }
-  .btnSearch {
-    font-size: 30px;
+  
+  @font-face {
+    font-family: "open_sans-semibold";
+    src: url("https://preopendata.aragon.es/static/public/fonts/opensans-semibold-webfont.woff2")
+        format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-semibold-webfont.woff")
+        format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-semibold-webfont.ttf")
+        format("truetype"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-semibold-webfont.svg#open_sanssemibold")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
   }
-}
-
-@media screen and (max-height: 400px) {
-  input,
-  input::-webkit-input-placeholder {
-    font-size: 20px;
+  
+  @font-face {
+    font-family: "open_sans-bold";
+    src: url("https://preopendata.aragon.es/static/public/fonts/opensans-bold.woff2") format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-bold.woff") format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-bold.ttf") format("truetype"),
+      url("https://preopendata.aragon.es/static/public/fonts/opensans-bold.svg#open_sanssemibold")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
   }
-  btnSearch {
-    font-size: 20px;
+  
+  @font-face {
+    font-family: "Signika-Bold";
+    src: url("https://preopendata.aragon.es/static/public/fonts/Signika-Bold.eot");
+    src: url("https://preopendata.aragon.es/static/public/fonts/Signika-Bold.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-Bold.woff2") format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-Bold.woff") format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
   }
-}
-#nav {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.textBox {
-  color: white;
-  background: transparent;
-  border: none;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  height: 100px;
-  width: 90%;
-  font-size: 70px;
-  padding-right: 10%;
-  font-family: 'Roboto', sans-serif;
-}
-
-.textBox:focus {
-  outline: none;
-}
-
-.btnSearch {
-  background: transparent;
-  color: white;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  float: right;
-  font-size: 80px;
-  height: 100px;
-  width: 10%;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.relatedHeader {
-  background-color: #666359;
-}
-
-@media screen and (max-width: 576px) {
-  .relatedHeader {
-    height: 15px !important;
+  
+  @font-face {
+    font-family: "Signika-SemiBold";
+    src: url("https://preopendata.aragon.es/static/public/fonts/Signika-SemiBold.eot");
+    src: url("https://preopendata.aragon.es/static/public/fonts/Signika-SemiBold.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-SemiBold.woff2") format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-SemiBold.woff") format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
   }
-}
-
-.relatedHeader a {
-  color: #e0e0e0;
-}
-
-.relatedHeader a:hover {
-  color: white;
-}
-
-.primary-nav {
-  display: -webkit-flex;
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  justify-content: flex-end;
-}
-
-.left {
-  margin-right: auto;
-  margin-left: 10px;
-}
-
-#logo {
-  max-width: 100%;
-  height: auto;
-}
-
-.logo {
-  margin: 10px;
-  z-index: 999;
-}
-
-@media screen and (max-width: 1000px) and (min-width: 480px) {
-  .logo {
-    height: auto;
-    width: 50%;
-    margin-top: 12px;
-    margin-left: 5px;
+  
+  @font-face {
+    font-family: "Signika";
+    src: url("https://preopendata.aragon.es/static/public/fonts/Signika-Regular.eot");
+    src: url("https://preopendata.aragon.es/static/public/fonts/Signika-Regular.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-Regular.woff2") format("woff2"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-Regular.woff") format("woff"),
+      url("https://preopendata.aragon.es/static/public/fonts/Signika-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
-}
-
-@media screen and (max-width: 480px) {
-  .logo {
-    height: auto;
-    width: 50%;
-    margin-top: 10px;
-    margin-left: 5px;
+  
+/* HEADER */
+  #header html {
+    text-decoration: none;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    box-sizing: border-box;
   }
-}
-.nav-link {
-  float: right !important;
-  text-align: center;
-  width: auto;
-  padding: 0.1rem 0.3rem !important;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  font-weight: 300;
-  margin-top: 2px;
-}
-.menu,
-.menuLogin {
-  width: 60px;
-  height: 60px;
-  position: fixed;
-  right: 20px;
-  display: inline-block;
-  z-index: 999;
-}
-
-.menuLogin {
-  right: 90px;
-}
-
-@media screen and (max-width: 1000px) and (min-width: 480px) {
-  .menu,
-  .menuLogin {
-    height: 50px;
-    width: 50px;
+  
+  #header ul {
+    padding: 0;
   }
-  .search-result a {
-    font-size: 16px !important;
+  
+  #header section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: table;
+    position: relative;
   }
-}
-
-@media screen and (min-width: 361px) and (max-width: 479px) {
-  .aMenu,
-  .aLogin,
-  .menu,
-  .menuLogin {
-    height: 40px;
+  
+  #header h1 {
+    margin: 150px auto;
+    display: table;
+    font-size: 26px;
+    padding: 40px 0px;
+    text-align: center;
   }
-}
-
-@media screen and (max-width: 360px) {
-  .textBox {
-    font-size: 25px;
-    height: 50px;
+  
+  #header h1 span {
+    font-weight: 500;
   }
-  .btnSearch {
-    font-size: 25px;
-    height: 50px;
+  
+  #header header {
+    width: 100%;
+    display: table;
+    background-color: #333;
   }
-  .aMenu,
-  .aLogin,
-  .menu,
-  .menuLogin {
-    height: 30px;
+  
+  #header header::before {
+    content: "";
+    width: 100%;
+    position: relative;
+    height: 0.5rem;
+    background: #fdcb33;
+    background: -moz-linear-gradient(
+      left,
+      #fdcb33 0%,
+      #fdcb33 33%,
+      #fa9902 33%,
+      #fa9902 66%,
+      #f05442 66%,
+      #f05442 100%,
+      #f1f1f1 100%,
+      #f05442 100%,
+      #f05442 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #fdcb33 0%,
+      #fdcb33 33%,
+      #fa9902 33%,
+      #fa9902 66%,
+      #f05442 66%,
+      #f05442 100%,
+      #f1f1f1 100%,
+      #f05442 100%,
+      #f05442 100%
+    );
+    background: linear-gradient(
+      to right,
+      #fdcb33 0%,
+      #fdcb33 33%,
+      #fa9902 33%,
+      #fa9902 66%,
+      #f05442 66%,
+      #f05442 100%,
+      #f1f1f1 100%,
+      #f05442 100%,
+      #f05442 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdcb33',endColorstr='#f05442',GradientType=1);
+    position: absolute;
+    top: 0;
   }
-  .overlay a,
-  .overlay li {
-    font-size: 15px;
+  #header #header #logo {
+    float: left;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 20px 0px;
   }
-  ::-webkit-input-placeholder {
-    font-size: 15px !important;
+  
+  #header nav {
+    width: auto;
+    float: right;
+  }
+  
+  #header nav ul {
+    display: table;
+    float: right;
+  }
+  
+  #header nav ul li {
+    float: left;
+  }
+  
+  #header nav ul li:last-child {
+    padding-right: 0px;
+  }
+  
+  #header nav ul li a {
+    font-size: 20px!important;
+    transition: all 0.5s ease 0s;
+    font-family: "open_sans-bold", sans-serif;
+    margin-bottom: 0;
   }
 
-  :-moz-placeholder {
-    /* Firefox 18- */
-    font-size: 15px !important;
+  #header nav ul li a:hover {
+    text-decoration: none;
   }
 
-  ::-moz-placeholder {
-    /* Firefox 19+ */
-    font-size: 15px !important;
-  }
 
-  :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    font-size: 15px !important;
+  #header nav ul li ul li{
+   width: 100%
   }
-
-  ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    font-size: 15px !important;
+  
+  #header nav ul li ul li a:hover {
+    text-decoration: underline;
   }
-  .search-result a {
-    font-size: 12px !important;
+  
+  #header nav ul li a i {
+    padding-right: 10px;
+    color: #d0d8e0;
+    transition: all 0.5s ease 0s;
   }
-}
-
-@media screen and (max-width: 450px) {
-  .menuLogin {
-    right: 65px;
+  
+  #header nav ul {
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
   }
-}
-
-@media screen and (max-width: 1250px) and (min-width: 360px) {
-  .textBox {
-    font-size: 25px;
-    height: 60px;
+  
+  #header nav ul li {
+    float: none;
+    padding: 0px;
+    display: table;
   }
-  .btnSearch {
-    font-size: 25px;
-    height: 60px;
+  
+  #header .toggle-menu ul {
+    display: table;
+    width: 25px;
   }
-  .overlay a,
-  .overlay li {
-    font-size: 20px;
+  
+  #header .toggle-menu ul li {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 4px;
   }
-  ::-webkit-input-placeholder {
-    font-size: 20px !important;
+  
+  #header .toggle-menu ul li:last-child {
+    margin-bottom: 0px;
   }
-
-  :-moz-placeholder {
-    /* Firefox 18- */
-    font-size: 20px !important;
+  
+  #header input[type="checkbox"],
+  #header label {
+    display: none;
   }
-
-  ::-moz-placeholder {
-    /* Firefox 19+ */
-    font-size: 20px !important;
+  
+  #header .content-header {
+    background-image: url(/static/public/header/images/opendata-background-header.jpg);
+    height: 169px;
+    background-color: #f2f2f2;
+    background-size: cover;
+    background-position: center;
+    position: relative;
   }
-
-  :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    font-size: 20px !important;
+  
+  #header .content {
+    max-width: inherit;
   }
-
-  ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    font-size: 20px !important;
+  .logo-image{
+      text-align: center !important;
   }
-}
-
-@media (min-width: 450px) and (max-width: 768px) {
-  .imgob {
-    width: 25%;
-    vertical-align: text-top;
-  }
-  .nav-link {
-    font-size: 7px;
-  }
-  .col-xs-2 {
-    width: 50%;
-  }
-}
-
-@media (max-width: 450px) {
-  .imgob {
-    width: 25%;
-    vertical-align: text-top;
-  }
-  .nav-link {
-    font-size: 5.3px;
-  }
-  .col-xs-2 {
-    width: 50%;
-    height: 17px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 940px) {
-  .imgob {
-    width: 18%;
-  }
-  .nav-link {
-    font-size: 12px;
-  }
-}
-@media (min-width: 940px) and (max-width: 1170px) {
-  .imgob {
-    width: 13%;
-  }
-  .nav-link {
-    font-size: 10px;
-  }
-}
-@media (min-width: 1170px) {
-  .imgob {
-    width: 8%;
-  }
-  .nav-link {
-    font-size: 11px;
+  #header .content-header-logo {
     display: block;
-  }
-}
-
-.active {
-  color: #ffffff !important;
-  font-weight: bold;
-  border-bottom: 2px solid #76a1b8;
-  text-align: center;
-}
-
-@media screen and (max-width: 850px) {
-  .left {
-    margin-left: 0;
-    width: 100%;
-    padding-top: 8px;
-  }
-  .right {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 100%;
   }
-}
+  
+  #header .content-header-logo img {
+    margin-top: 50px;
+  }
+  
+  #header .content-header::after {
+    content: "";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdcb33',endColorstr='#f05442',GradientType=1);
+    width: 100%;
+    position: absolute;
+    background: #5ea2ba;
+    height: 0.5rem;
+    bottom: 1px;
+  }
 
-.bg-light {
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  #header .logo-dga{
+    display: inline-block;
+    margin-top: 4px;
+  }
+  
+  /* Icon */
+  
+  #header #nav-icon3 {
+    width: 49px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+  
+  #header #nav-icon3 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+  
+  #header #nav-icon3 span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #header #nav-icon3 span:nth-child(2),
+  #header #nav-icon3 span:nth-child(3) {
+    top: 11px;
+  }
+  
+  #header #nav-icon3 span:nth-child(4) {
+    top: 22px;
+  }
+  
+  #header #nav-icon3.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  #header #nav-icon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #header #nav-icon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  #header #nav-icon3.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  #header .header-menu {
+    float: right;
+  }
+  
+  #header .european-flag-head .image {
+    border-right: 0.1rem solid #fff;
+    padding: 0 2rem 0;
+  }
+  
+  /* quitar espacio sección */
+  .focus {
+    margin-top: 0!important;
 }
+  
+@media only screen and (max-width: 320px) {
+    #header header {
+      padding: 0.85rem 0 1.15rem 1.25rem;
+    }
+    #header .european-flag-head .image {
+      margin-right: 0px !important;
+      padding: 0 20px 0 !important;
+      border-right: none !important;
+    }
+    #header h1 {
+      padding: 20px 0px;
+    }
+  
+    #header .content-header-logo img {
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 360px) {
+    #header h1 {
+      font-size: 20px;
+    }
+  
+    #header label {
+      padding: 5px 0px;
+    }
+  
+    #header #logo {
+      font-size: 20px;
+    }
+  
+    #header nav {
+      top: 47px;
+    }
+    #header .nav ul {
+      display: grid !important;
+    }
+    #header .european-flag-head img {
+      padding: 0 1rem 0;
+      margin-right: 26px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    #header section {
+      max-width: 90%;
+    }
+  
+    #header .nav ul {
+      display: grid !important;
+    }
+  }
+  @media only screen and (max-width: 568px) {
+    #header h1 {
+      padding: 25px 0px;
+    }
+  
+    #header h1 span {
+      display: block;
+    }
+    #header .content-header-logo img {
+      width: 95%;
+      padding: 8px;
+    }
+    #header .logo-dga img {
+      height: 2rem !important;
+      margin-top: 0.9rem !important;
+    }
+    #header .european-flag-head .image {
+      padding: 0 1rem 0;
+      margin-right: 26px;
+    }
+  
+    #header nav {
+      display: block;
+      height: 642px !important;
+      width: inherit;
+      position: fixed !important;
+      right: 0px;
+      top: 95px !important;
+      padding: 30px!important;
+    }
+  
+    #header nav ul {
+      display: flex;
+      justify-content: normal;
+      text-align: left;
+      flex-direction: column;
+    }
+  
+    #header nav ul li {
+      float: none;
+      padding: 0px;
+      display: table;
+      width: -webkit-fill-available;
+    }
+  
+    #header nav ul li a {
+      font-size: 24px !important;
+    }
+
+    #header .dropdown-content {
+      padding: 15px 0 0 0!important;
+      position: initial!important;
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media only screen and (max-width: 1440px) {
+    #header header {
+      padding: 1rem 1.5rem 1.3rem;
+      margin: 0 auto;
+    }
+    #header section {
+      max-width: 95%;
+    }
+  }
+  @media only screen and (max-width: 1980px) {
+    #header header {
+      padding: 19px 0 0 0;
+    }
+    #header .logo-dga img {
+        height: 50px;
+      }
+  
+    #header #logo {
+      padding: 0px;
+    }
+  
+    #header input[type="checkbox"] {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      background: none;
+    }
+    #header input[type="checkbox"]:fous {
+      background: none;
+    }
+  
+    #header label {
+      float: right; 
+      padding: 8px 0px 8px 56px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  
+    #header input[type="checkbox"]:checked ~ nav {
+      display: block;
+    }
+  
+    #header .text-open-menu {
+      top: 30px;
+      position: relative;
+      right: 10px;
+      color: #fff;
+    }
+  
+    #header nav {
+      display: none;
+      position: absolute;
+      top: 80px;
+      background-color: #4a4a4a;
+      padding: 0px;
+      z-index: 99;
+      justify-content: space-around;
+      width: 100%;
+    }
+  
+    #header .dropdown-content {
+      display: none!important;
+      position: absolute;
+      background-color: #4a4a4a;
+      z-index: 1;
+      padding: 0 15px 15px;
+    }
+  
+    #header .dropdown-content a {
+      border-left: 1px solid #437587;
+      border-bottom: 1px solid #437587;
+    }
+
+    #header .dropdown-content li:first-child a{
+      border-top: 1px solid #437587;
+    }
+  
+    #header nav ul li .dropdown-content li a {
+       font-size: 16px!important;
+      font-family: "open_sans", sans-serif!important;
+      padding: 5px 10px!important;
+      font-weight: normal;
+    }
+
+    #header nav ul li .dropdown-content li a::after {
+      content: none;
+    }
+  
+    #header .dropdown-content li a::after {
+      content: "";
+    }
+  
+    #header nav ul li:hover .dropdown-content {
+      display: block!important;
+    }
+  
+    #header nav ul li a {
+      color: #fff !important;
+      display: block;
+      padding:0 !important;
+    }
+  
+    #header nav ul li a::after {
+      content: "\f078";
+      font-size: 17px;
+      line-height: 3.92rem;
+      line-height: 2.8rem;
+      font-family: "FontAwesome";
+      margin-left: 5px;
+    }
+  
+    #header nav ul li a:hover:after {
+      transform: rotate(180deg);
+      transition: all 300ms linear;
+    }
+  
+    #header .text-header-center {
+      line-height: normal;
+      font-size: 16px;
+      text-align: center !important;
+      font-family: "Signika", sans-serif;
+      margin-bottom: 50px;
+    }
+  }
