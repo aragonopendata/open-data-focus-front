@@ -98,37 +98,40 @@ export class HeaderComponent implements OnInit {
   }
 
   openNav() {
-    this.toggleOpenedMenu();
-    this.openedMenu = this.getOpenedMenu();
-    if (!this.menuActive) {
-      $('#menu').attr('alt', 'cerrar-menú');
-      $('.overlay').css('top', $('#header').height());
-      $('#myNav').height($(window).height() - $('#header').height());
-      $('#logo').attr(
-        'src',
-        '/static/public/header/images/AOD-Logo-Responsive.png'
-      );
-      this.menuActive = !this.menuActive;
-      $('#nav').attr('class', 'navbar navbar-toggleable-md bg-inverse');
-      $('#nav').css('background-color', 'rgba(0,0,0, 0.82)');
-      this.srcLogin =
-        '/static/public/header/images/Boton-Acceso-Usuarios-gris.png';
-      this.srcMenu =
-        '/static/public/header/images/Boton-Salir-Menu-Responsive-OFF.png';
-    } else {
-      $('#menu').attr('alt', 'desplegar-menú');
-      $('body,html').css('overflow-y', 'auto');
-      $('#myNav').height('0%');
-      $('#nav').attr('class', 'navbar navbar-toggleable-md bg-light');
-      $('#logo').attr('src', '/static/public/header/images/AOD-Logo.png');
-      $('#searchBox').val('');
-      this.menuActive = !this.menuActive;
-      this.srcLogin =
-        '/static/public/header/images/Boton-Acceso-Usuarios-OFF.png';
-      this.srcMenu =
-        '/static/public/header/images/Boton-Menu-Responsive-OFF.png';
-      this.datasetAutocomplete = [];
-    }
+    this.menuActive = !this.menuActive;
+    // this.toggleOpenedMenu();
+    // this.openedMenu = this.getOpenedMenu();
+    //  if (!this.menuActive) {
+    //   $('#menu').attr('alt', 'cerrar-menú');
+    //   $('.overlay').css('top', $('#header').height());
+    //   $('#myNav').height($(window).height() - $('#header').height());
+    //   $('#logo').attr(
+    //     'src',
+    //     '/static/public/header/images/AOD-Logo-Responsive.png'
+    //   );
+    //  this.menuActive = !this.menuActive;
+    //   $('#nav').attr('class', 'navbar navbar-toggleable-md bg-inverse');
+    //   $('#nav').css('background-color', 'rgba(0,0,0, 0.82)');
+      // $('#nav-icon3').attr('open','open');
+      // this.srcLogin =
+      //   '/static/public/header/images/Boton-Acceso-Usuarios-gris.png';
+      // this.srcMenu =
+      //   '/static/public/header/images/Boton-Salir-Menu-Responsive-OFF.png';
+    // } else {
+      // $('#menu').attr('alt', 'desplegar-menú');
+      // $('body,html').css('overflow-y', 'auto');
+      // $('#myNav').height('0%');
+      // $('#nav').attr('class', 'navbar navbar-toggleable-md bg-light');
+      // $('#logo').attr('src', '/static/public/header/images/AOD-Logo.png');
+      // $('#searchBox').val('');
+      // $('#nav-icon3').css('class','');
+      // this.menuActive = !this.menuActive;
+      // this.srcLogin =
+      //   '/static/public/header/images/Boton-Acceso-Usuarios-OFF.png';
+      // this.srcMenu =
+      //   '/static/public/header/images/Boton-Menu-Responsive-OFF.png';
+      // this.datasetAutocomplete = [];
+    // }
   }
 
   hover(id) {

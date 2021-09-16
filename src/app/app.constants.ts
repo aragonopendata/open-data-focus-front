@@ -736,7 +736,7 @@ export class Constants {
 
 
 
-
+  public static GA_OD_CORE_BASE_URL = 'https://opendata.aragon.es';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC = '/GA_OD_Core';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEWS = '/views';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_PREVIEW = '/preview';
