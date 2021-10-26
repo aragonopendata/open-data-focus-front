@@ -41,15 +41,14 @@ export class HistoriesService {
   public getCategories(): Observable<Category[]> {
     let fullUrl=Constants.GA_OD_CORE_BASE_URL + Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC +Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_PREVIEW;
     let params = new URLSearchParams();
-    params.append(Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_FILTER_SQL, Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_SQL_NIVEL_1);
     params.append(Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID, Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID_NUMBER_TOPICS);
-    return this.http.get(fullUrl, { search: params }).pipe(
+    params.append(Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_FILTER_SQL, Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_SQL_NIVEL_1);
+    return this.http.get(fullUrl, { search: params }).
       map(data => {
-        return data.json().splice(1,data.json().length).map( element => {
-          return new Category(element[0],  element[1], element[2], element[3], element[4], element[5]);
+        return data.json().map( element => {
+          return new Category(element.id_tema,  element.alias, element.nombre, element.descripcion, element.nivel, element.id_padre);
         });
-      })
-    );
+      });
   }
 
   public getHistoryBackUserByToken(token: string){
@@ -235,7 +234,7 @@ export class HistoriesService {
 
   getIconCategory(id) {
 
-    if (id === 1261){
+    if (id === 1){
       return "https://opendata.aragon.es/static/public/i/temas/12-Justicia.png"
     } else if (id === 1262){
       return "https://opendata.aragon.es/static/public/i/temas/18-Sociedad.png"
