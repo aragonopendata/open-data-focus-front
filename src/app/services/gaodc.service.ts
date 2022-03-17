@@ -35,11 +35,12 @@ export class GaodcService {
     headers.append('Content-Type', 'application/json');
     const body = JSON.stringify({ packages: data });
     return this.http
-      .post(this.serverURL + '/services/gaodc/packageInfo', body, {
-        headers: headers
-      })
+      .get("https://opendata.aragon.es/GA_OD_Core/preview?view_id="+data)
+      // , body, {
+      //   headers: headers
+      // })
       .map(res => {
-        return JSON.parse(res.text().toString());
+        return res.json();
       })
       .catch(err => {
         return Observable.throw('errorConexion');

@@ -2,7 +2,7 @@ import { Aligns, AlignsType } from "./models/Aligns";
 import { ContentsType, Contents } from "./models/Contents";
 
 export class Constants {
-  public static SERVER_URL = 'https://preopendata.aragon.es';
+  public static SERVER_URL = 'https://opendata.aragon.es';
   public static VISUAL_BACK_SERVER_URL =
     Constants.SERVER_URL + '/apivisualdata';
   public static LIST_ALL_HISTORIES_PATH = '/services/histories';
@@ -32,20 +32,20 @@ export class Constants {
   public static PATH_MODIFIER = '';
 
   // URLS FOCUS
-  public static FOCUS_URL = 'https://preopendata.aragon.es/servicios/focus';
+  public static FOCUS_URL = 'https://opendata.aragon.es/servicios/focus';
 
   // URLS GLOBAL
-  public static AOD_BASE_URL = 'https://preopendata.aragon.es';
+  public static AOD_BASE_URL = 'https://opendata.aragon.es';
   public static PRESUPUESTOS_BASE_URL = 'http://presupuesto.aragon.es';
-  public static AOD_ASSETS_BASE_URL = 'https://preopendata.aragon.es/static';
+  public static AOD_ASSETS_BASE_URL = 'https://opendata.aragon.es/static';
   public static AOD_API_WEB_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/web';
+    'https://opendata.aragon.es/aod/services/web';
   public static AOD_API_ADMIN_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/admin';
+    'https://opendata.aragon.es/aod/services/admin';
   public static AOD_API_SECURITY_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/security';
+    'https://opendata.aragon.es/aod/services/security';
   public static AOD_API_CKAN_BASE_URL =
-    'http://mev-aodfront-01.aragon.local:5000';
+    'http://mov-aodfront-01.aragon.local:5000';
   public static AOD_COLLABORATION_URL =
     'https://aragon.uservoice.com/forums/192552-datos-que-me-gustar%C3%ADa-reutilizar'; 
   public static AOD_GITHUB_URL = 'http://github.com/aragonopendata';
@@ -488,7 +488,7 @@ export class Constants {
   public static ADMIN_USER_ROL_GLOBAL_ADMIN = 'global_adm';
   public static ADMIN_USER_ROL_ORGANIZATION_ADMIN = 'org_adm';
   public static ADMIN_USER_ROL_ORGANIZATION_EDITOR = 'org_editor';
-  public static ADMIN_USER_ROL_ORGANIZATION_MEMBER = 'org_member'; 
+  public static ADMIN_USER_ROL_ORGANIZATION_MEMBER = 'org_member'; 
 
   //ADMIN ORGANIZATION
   public static GROWL_SEVERITY_SUCCESS = 'success';
@@ -508,8 +508,8 @@ export class Constants {
   public static ERROR_ORGANIZATION_GET_ORG = 'Error: loadOrganization() - organizations-admin-edit.component.ts';
 
   //ADMIN LOGIN
-  public static LOGIN_DATA_PARAM_TYPE_ORGANIZATION = 'org';
-  public static LOGIN_DATA_PARAM_TYPE_DATASET = 'dataset'; 
+  public static LOGIN_DATA_PARAM_TYPE_ORGANIZATION = 'org';
+  public static LOGIN_DATA_PARAM_TYPE_DATASET = 'dataset'; 
 
 
   //ROUTING
@@ -614,8 +614,8 @@ export class Constants {
   public static ROUTER_LINK_DATA_CAMPUS_PARAM_TYPE = 'type';
   public static ROUTER_LINK_DATA_CAMPUS_PARAM_TEXT = 'text';
   public static ROUTER_LINK_TOOLS_CAMPUS_EVENT_NAME = 'eventName';
-  public static ROUTER_LINK_DATA_PARAM_DATA_LOGIN = 'data';
-  public static ROUTER_LINK_DATA_PARAM_EDIT_DATA = 'dataName'; 
+  public static ROUTER_LINK_DATA_PARAM_DATA_LOGIN = 'data';
+  public static ROUTER_LINK_DATA_PARAM_EDIT_DATA = 'dataName'; 
   public static ROUTER_LINK_STATIC_CONTENT_OPEN_DATA_SECTION_REDIRECT = '/informacion/open-data#';
   public static ROUTER_LINK_STATIC_CONTENT_EVENTS_SECTION_REDIRECT = '/informacion/eventos#';
   public static ROUTER_LINK_STATIC_CONTENT_DEVELOPERS_SECTION_REDIRECT = '/herramientas/desarrolladores#';
@@ -640,7 +640,7 @@ export class Constants {
   public static SERVER_API_LINK_TOPICS = '/topics';
   public static SERVER_API_LINK_TAGS = '/tags';
   public static SERVER_API_LINK_ORGANIZATIONS = '/organizations';
-  public static SERVER_API_LINK_ORGANIZATION = '/organization'; 
+  public static SERVER_API_LINK_ORGANIZATION = '/organization'; 
   public static SERVER_API_LINK_STATIC_CONTENT_INFO = '/static-content/info';
   public static SERVER_API_LINK_STATIC_CONTENT_INFO_OPEN_DATA = '/open-data';
   public static SERVER_API_LINK_STATIC_CONTENT_INFO_APPLICATIONS = '/applications';
@@ -741,10 +741,10 @@ export class Constants {
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEWS = '/views';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_PREVIEW = '/preview';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_NAME_CATEGORIES='NOMBRE'
-  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID = 'view_id';
+  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID = 'resource_id';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID_NUMBER_TOPICS = '161';
-  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_FILTER_SQL = 'filter_sql';
-  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_SQL_NIVEL_1 = 'NIVEL=1';
+  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_FILTER_SQL = 'filters';
+  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_SQL_NIVEL_1 = '{"nivel":"1"}';
 
 
 

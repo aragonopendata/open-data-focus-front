@@ -234,7 +234,7 @@ export class HistoriesService {
 
   getIconCategory(id) {
 
-    if (id === 1){
+    if (id === 1261){
       return "https://opendata.aragon.es/static/public/i/temas/12-Justicia.png"
     } else if (id === 1262){
       return "https://opendata.aragon.es/static/public/i/temas/18-Sociedad.png"
