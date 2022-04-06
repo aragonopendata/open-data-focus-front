@@ -318,7 +318,7 @@ export class SelectDataComponent implements OnInit, OnDestroy {
       return -1;
     } else {
       // OTher URL
-      const expression = /(aragon\.es|unizar\.es)\//gi;
+      const expression = /(aragon\.es|unizar\.es | cita\-aragon\.es)\//gi;
       const regex = new RegExp(expression);
       if (this.navigationService.urlPackagesInfo && this.navigationService.urlPackagesInfo.match(regex)) {
         return -2;
