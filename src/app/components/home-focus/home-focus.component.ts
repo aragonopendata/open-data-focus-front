@@ -57,8 +57,8 @@ export class HomeFocusComponent implements OnInit {
   getCategories(){
     this._historiesService.getCategories().subscribe( (categories: Category[]) => {
       if( categories.length > 0 ){
-        this.categoriesVisible = categories.slice(0,4);
-        this.categoriesHidden = categories.slice(4,categories.length);
+        this.categoriesVisible = categories.slice(0,15);
+        this.categoriesHidden = categories.slice(15,categories.length);
       }
 		},err => {
       console.log('Error al obtener las categorias');
@@ -123,13 +123,17 @@ export class HomeFocusComponent implements OnInit {
   }
 
   getHistories(text, category){
+
     if(category== this.categorySearch){
       this.categorySearch=null;
     }else{
       this.categorySearch = (category != null ? category : this.categorySearch)
     }
-
+    
     this.textSearch = (text != null ? text : this.textSearch);
+    
+    this.textSearch = this.textSearch.toLowerCase()
+    
     this._historiesService.getHistoriesBySearch(this.textSearch, this.categorySearch===null?null:this.categorySearch.toString()).subscribe( response => {
       if(response.success){
         this.histories=response.history;
@@ -143,7 +147,7 @@ export class HomeFocusComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     if(event.keyCode==13 || event.type=="click"){
-      this._route.navigate([Constants.ROUTER_LINK_VIEW_HISTORY + '/' + url]);
+      window.open(Constants.ROUTER_LINK_VIEW_HISTORY + '/' + url, '_blank');
     }
   }
 

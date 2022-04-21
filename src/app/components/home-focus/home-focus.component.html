@@ -2,71 +2,112 @@
   <div class="row">
     <div class="col-12">
       <div class="form-group">
-
         <!-- Search -->
         <div class="input-group col-12">
-          <button class="btn btn-primary ocultar-div" id="crearHistoria" type="button"  data-toggle="modal" (click)="openHomeFocusModal()" tabindex="{{openedMenu ? -1 : 0}}">
-            <div class="icon-fa fa fa-plus"></div> Crear historia
-            <span class="sr-only">Crear historia</span> 
+          <button
+            class="btn btn-primary ocultar-div"
+            id="crearHistoria"
+            type="button"
+            data-toggle="modal"
+            (click)="openHomeFocusModal()"
+            tabindex="{{ openedMenu ? -1 : 0 }}"
+          >
+            <div class="icon-fa fa fa-plus"></div>
+            Crear historia
+            <span class="sr-only">Crear historia</span>
           </button>
-          
-          <!-- <div class="input-search">
-            <input tabindex="{{openedMenu ? -1 : 0}}" type="text" id="search" class="form-control" placeholder="Introduce título..." aria-label="Recipient's username" #searchInput>
-            <span class="sr-only">Buscador: Introduce el titulo de una historia</span> 
+
+          <div class="input-search">
+            <input
+              tabindex="{{ openedMenu ? -1 : 0 }}"
+              type="text"
+              id="search"
+              class="form-control"
+              placeholder="Introduce título..."
+              aria-label="Recipient's username"
+              #searchInput
+            />
+            <span class="sr-only"
+              >Buscador: Introduce el titulo de una historia</span
+            >
             <div class="icon-fa fa fa-search"></div>
           </div>
 
           <div class="input-group-append">
-            <button tabindex="{{openedMenu ? -1 : 0}}" class="btn btn-outline-secondary" type="button" (click)="getHistories(searchInput.value,null)">Buscar</button>
+            <button
+              tabindex="{{ openedMenu ? -1 : 0 }}"
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="getHistories(searchInput.value, null)"
+            >
+              Buscar
+            </button>
             <span class="sr-only">Buscar historia</span>
-          </div> -->
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <!-- categories -->
+      <ul class="list-categories nav fist-categories">
+        <li class="nav-item" *ngFor="let category of categoriesVisible">
+          <span
+            
+            class="nav-link"
+            [ngClass]="
+              category.id == categorySearch ? 'selected' : 'noSelected'
+            "
+            
+            (click)="getHistories(searchInput.value, category.id)"
+            > 
+            <img width="30" height="30" class="category-img" [src]="this._historiesService.getIconCategory(category.id)" alt="Imagen de la categoría {{category.name}}">
+            {{ category.name }}</span
+          >
+          
+          <span class="sr-only">Categoria: {{ category.name }}</span>
+        </li>
+      </ul>
 
-        <!-- categories -->
-        <!-- <ul class="list-categories nav justify-content-center fist-categories">
-          <li class="nav-item " *ngFor="let category of categoriesVisible">
-            <span class="nav-link text-primary" [ngClass]="category.id==categorySearch ? 'selected' : 'noSelected'" (click)="getHistories(searchInput.value, category.id)">{{category.name}}</span>
-            <span class="sr-only">Categoria: {{category.name}}</span>
-          </li>
-        </ul>
-
-        <div *ngIf='viewMoreCategories'>
-          <ul class="nav justify-content-center list-categories">
-            <li class="nav-item" *ngFor="let category of categoriesHidden">
-              <span tabindex="{{openedMenu ? -1 : 0}}" class="nav-link text-primary"  [ngClass]="category.id==categorySearch ? 'selected' : 'noSelected'" (click)="getHistories(searchInput.value, category.id)">{{category.name}}</span>
-              <span class="sr-only">Categoria: {{category.name}}</span>
-            </li> 
-          </ul>
-        </div>
-        
-        <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf='categoriesHidden' class="btn view-more" type="button" (click)='viewMoreCategories = !viewMoreCategories'>
-          <div *ngIf='!viewMoreCategories' class="icon-fa fa fa-angle-down" tabindex="{{openedMenu ? -1 : 0}}"></div>
-          <span class="sr-only">Ver mas</span> 
-          <div *ngIf='viewMoreCategories' class="icon-fa fa fa-angle-up" tabindex="{{openedMenu ? -1 : 0}}"></div>
-          <span class="sr-only">Ver menos</span> 
-          <span *ngIf='!viewMoreCategories'>Ver mas</span>
-          <span *ngIf='viewMoreCategories'>Ver menos</span>
-        </button>  -->
-
+      
+    </div>
+    <div class="col-8">
         <!-- histories -->
         <div class="histories">
           <div>
             <div *ngFor="let history of histories">
-              <div tabindex="{{openedMenu ? -1 : 0}}" class="card"  (click)="getHistory($event, history.url)" (keyup)="getHistory($event, history.url)">
-                <img [src]="this._historiesService.getIconCategory(history.main_category)" alt="Imagen de la categoría">
+              <div
+                tabindex="{{ openedMenu ? -1 : 0 }}"
+                class="card"
+                (click)="getHistory($event, history.url)"
+                (keyup)="getHistory($event, history.url)"
+              >
+                <img
+                  class="category-img"
+                  [src]="
+                    this._historiesService.getIconCategory(history.main_category)
+                  "
+                  alt="Imagen de la categoría"
+                />
                 <div class="opacity"></div>
-
-                <div class="text"><span>{{history.title}}</span></div>
+                <div class="text">
+                  <span>{{ history.title }}</span>
+                </div>
                 
               </div>
-              <span class="sr-only">Historia: {{history.title}}</span>
+  
+              <div class="row">
+                <div class="col-12">
+                  <span class="sr-only">Historia: {{ history.title }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
 <!-- Modal -->
