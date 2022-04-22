@@ -71,6 +71,7 @@ import { ModalComponent } from './components/common/modal/modal.component';
 import { VisualGrapsService } from './services/visual-graps.service';
 import { ViewHistoryComponent } from './components/histories/view-history/view-history.component';
 
+import { SocialMediaShareButtonsComponent } from './components/social-media-share-buttons/social-media-share-buttons.component';
 import { TinyMceModule } from 'angular-tinymce';
 import { tinymceDefaultSettings } from 'angular-tinymce';
 import { IFrameResizerDirective } from './directives/iframe-resizer.directive';
@@ -160,7 +161,8 @@ const routes: Routes = [
     ModalComponent,
     ViewHistoryComponent,
     IFrameResizerDirective,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    SocialMediaShareButtonsComponent,
   ],
   providers: [
     DatePipe,

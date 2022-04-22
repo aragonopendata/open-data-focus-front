@@ -147,7 +147,7 @@ export class HomeFocusComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     if(event.keyCode==13 || event.type=="click"){
-      window.open(Constants.ROUTER_LINK_VIEW_HISTORY + '/' + url, '_blank');
+      window.open(Constants.ROUTER_LINK_SERVICES_FOCUS +'/'+ Constants.ROUTER_LINK_VIEW_HISTORY + '/' + url, '_blank');
     }
   }
 
