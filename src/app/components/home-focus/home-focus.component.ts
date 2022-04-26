@@ -57,8 +57,21 @@ export class HomeFocusComponent implements OnInit {
   getCategories(){
     this._historiesService.getCategories().subscribe( (categories: Category[]) => {
       if( categories.length > 0 ){
-        this.categoriesVisible = categories.slice(0,15);
-        this.categoriesHidden = categories.slice(15,categories.length);
+
+        console.log(categories);
+
+        // copiar el array
+        let sorted_categories = [...categories]
+
+        console.log(sorted_categories);
+
+        // poner en orden ascendente
+        sorted_categories.sort((one, two) => (one.alias > two.alias) ? 1 : -1)
+
+
+        // coge los primeros 15 elementos y ocultar el resto
+        this.categoriesVisible = sorted_categories.slice(0,15);
+        this.categoriesHidden = sorted_categories.slice(15,sorted_categories.length);
       }
 		},err => {
       console.log('Error al obtener las categorias');
@@ -129,11 +142,11 @@ export class HomeFocusComponent implements OnInit {
     }else{
       this.categorySearch = (category != null ? category : this.categorySearch)
     }
-    
+
     this.textSearch = (text != null ? text : this.textSearch);
-    
+
     this.textSearch = this.textSearch.toLowerCase()
-    
+
     this._historiesService.getHistoriesBySearch(this.textSearch, this.categorySearch===null?null:this.categorySearch.toString()).subscribe( response => {
       if(response.success){
         this.histories=response.history;
