@@ -9,7 +9,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "open_sans";
     src: url("https://opendata.aragon.es/static/public/fonts/opensans-regular-webfont.woff2")
@@ -21,7 +21,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "open_sans-semibold";
     src: url("https://opendata.aragon.es/static/public/fonts/opensans-semibold-webfont.woff2")
@@ -35,7 +35,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "open_sans-bold";
     src: url("https://opendata.aragon.es/static/public/fonts/opensans-bold.woff2") format("woff2"),
@@ -46,7 +46,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "Signika-Bold";
     src: url("https://opendata.aragon.es/static/public/fonts/Signika-Bold.eot");
@@ -58,7 +58,7 @@
     font-weight: bold;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "Signika-SemiBold";
     src: url("https://opendata.aragon.es/static/public/fonts/Signika-SemiBold.eot");
@@ -70,7 +70,7 @@
     font-weight: 600;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: "Signika";
     src: url("https://opendata.aragon.es/static/public/fonts/Signika-Regular.eot");
@@ -82,7 +82,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
 /* HEADER */
   #header html {
     text-decoration: none;
@@ -92,11 +92,11 @@
     outline: none;
     box-sizing: border-box;
   }
-  
+
   #header ul {
     padding: 0;
   }
-  
+
   #header section {
     width: 100%;
     max-width: 1200px;
@@ -104,7 +104,7 @@
     display: table;
     position: relative;
   }
-  
+
   #header h1 {
     margin: 150px auto;
     display: table;
@@ -112,17 +112,17 @@
     padding: 40px 0px;
     text-align: center;
   }
-  
+
   #header h1 span {
     font-weight: 500;
   }
-  
+
   #header header {
     width: 100%;
     display: table;
     background-color: #333;
   }
-  
+
   #header header::before {
     content: "";
     width: 100%;
@@ -177,25 +177,25 @@
     font-weight: 600;
     padding: 20px 0px;
   }
-  
+
   #header nav {
     width: auto;
     float: right;
   }
-  
+
   #header nav ul {
     display: table;
     float: right;
   }
-  
+
   #header nav ul li {
     float: left;
   }
-  
+
   #header nav ul li:last-child {
     padding-right: 0px;
   }
-  
+
   #header nav ul li a {
     font-size: 20px!important;
     transition: all 0.5s ease 0s;
@@ -211,51 +211,51 @@
   #header nav ul li ul li{
    width: 100%
   }
-  
+
   #header nav ul li ul li a:hover {
     text-decoration: underline;
   }
-  
+
   #header nav ul li a i {
     padding-right: 10px;
     color: #d0d8e0;
     transition: all 0.5s ease 0s;
   }
-  
+
   #header nav ul {
     width: inherit;
     display: flex;
     justify-content: space-around;
     margin-bottom: 0;
   }
-  
+
   #header nav ul li {
     float: none;
     padding: 0px;
     display: table;
   }
-  
+
   #header .toggle-menu ul {
     display: table;
     width: 25px;
   }
-  
+
   #header .toggle-menu ul li {
     width: 100%;
     height: 3px;
     background-color: #ffffff;
     margin-bottom: 4px;
   }
-  
+
   #header .toggle-menu ul li:last-child {
     margin-bottom: 0px;
   }
-  
+
   #header input[type="checkbox"],
   #header label {
     display: none;
   }
-  
+
   #header .content-header {
     background-image: url(/static/public/header/images/opendata-background-header.jpg);
     height: 169px;
@@ -264,7 +264,7 @@
     background-position: center;
     position: relative;
   }
-  
+
   #header .content {
     max-width: inherit;
   }
@@ -280,11 +280,11 @@
     text-align: center;
     width: 100%;
   }
-  
+
   #header .content-header-logo img {
     margin-top: 50px;
   }
-  
+
   #header .content-header::after {
     content: "";
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdcb33',endColorstr='#f05442',GradientType=1);
@@ -299,9 +299,9 @@
     display: inline-block;
     margin-top: 4px;
   }
-  
+
   /* Icon */
-  
+
   #header #nav-icon3 {
     width: 49px;
     height: 40px;
@@ -316,8 +316,9 @@
     transition: 0.5s ease-in-out;
     cursor: pointer;
     margin-top: 0px;
+    margin-bottom: 8px;
   }
-  
+
   #header #nav-icon3 span {
     display: block;
     position: absolute;
@@ -336,60 +337,60 @@
     -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
   }
-  
+
   #header #nav-icon3 span:nth-child(1) {
     top: 0px;
   }
-  
+
   #header #nav-icon3 span:nth-child(2),
   #header #nav-icon3 span:nth-child(3) {
     top: 11px;
   }
-  
+
   #header #nav-icon3 span:nth-child(4) {
     top: 22px;
   }
-  
+
   #header #nav-icon3.open span:nth-child(1) {
     top: 18px;
     width: 0%;
     left: 50%;
   }
-  
+
   #header #nav-icon3.open span:nth-child(2) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  
+
   #header #nav-icon3.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
-  
+
   #header #nav-icon3.open span:nth-child(4) {
     top: 18px;
     width: 0%;
     left: 50%;
   }
-  
+
   #header .header-menu {
     float: right;
   }
-  
+
   #header .european-flag-head .image {
     border-right: 0.1rem solid #fff;
     padding: 0 2rem 0;
   }
-  
+
   /* quitar espacio sección */
   .focus {
     margin-top: 0!important;
 }
-  
+
 @media only screen and (max-width: 320px) {
     #header header {
       padding: 0.85rem 0 1.15rem 1.25rem;
@@ -402,25 +403,25 @@
     #header h1 {
       padding: 20px 0px;
     }
-  
+
     #header .content-header-logo img {
       width: 90%;
     }
   }
-  
+
   @media only screen and (max-width: 360px) {
     #header h1 {
       font-size: 20px;
     }
-  
+
     #header label {
       padding: 5px 0px;
     }
-  
+
     #header #logo {
       font-size: 20px;
     }
-  
+
     #header nav {
       top: 47px;
     }
@@ -432,12 +433,12 @@
       margin-right: 26px;
     }
   }
-  
+
   @media only screen and (max-width: 480px) {
     #header section {
       max-width: 90%;
     }
-  
+
     #header .nav ul {
       display: grid !important;
     }
@@ -446,7 +447,7 @@
     #header h1 {
       padding: 25px 0px;
     }
-  
+
     #header h1 span {
       display: block;
     }
@@ -462,7 +463,7 @@
       padding: 0 1rem 0;
       margin-right: 26px;
     }
-  
+
     #header nav {
       display: block;
       height: 642px !important;
@@ -472,21 +473,21 @@
       top: 0!important;
       padding: 30px!important;
     }
-  
+
     #header nav ul {
       display: flex;
       justify-content: normal;
       text-align: left;
       flex-direction: column;
     }
-  
+
     #header nav ul li {
       float: none;
       padding: 0px;
       display: table;
       width: -webkit-fill-available;
     }
-  
+
     #header nav ul li a {
       font-size: 24px !important;
     }
@@ -497,7 +498,7 @@
       margin-bottom: 15px;
     }
   }
-  
+
   @media only screen and (max-width: 1440px) {
     #header header {
       padding: 1rem 1.5rem 1.3rem;
@@ -514,11 +515,11 @@
     #header .logo-dga img {
         height: 50px;
       }
-  
+
     #header #logo {
       padding: 0px;
     }
-  
+
     #header input[type="checkbox"] {
       position: absolute;
       top: -9999px;
@@ -528,36 +529,36 @@
     #header input[type="checkbox"]:fous {
       background: none;
     }
-  
+
     #header label {
-      float: right; 
+      float: right;
       padding: 8px 0px 8px 56px;
       display: inline-block;
       cursor: pointer;
     }
-  
+
     #header input[type="checkbox"]:checked ~ nav {
       display: block;
     }
-  
+
     #header .text-open-menu {
       top: 30px;
       position: relative;
       right: 10px;
       color: #fff;
     }
-  
+
     #header nav {
       display: none;
       position: absolute;
-      top: 80px;
+      top: 71px;
       background-color: #4a4a4a;
       padding: 0px;
       z-index: 99;
       justify-content: space-around;
       width: 100%;
     }
-  
+
     #header .dropdown-content {
       display: none!important;
       position: absolute;
@@ -565,7 +566,7 @@
       z-index: 1;
       padding: 0 15px 15px;
     }
-  
+
     #header .dropdown-content a {
       border-left: 1px solid #437587;
       border-bottom: 1px solid #437587;
@@ -574,7 +575,7 @@
     #header .dropdown-content li:first-child a{
       border-top: 1px solid #437587;
     }
-  
+
     #header nav ul li .dropdown-content li a {
        font-size: 16px!important;
       font-family: "open_sans", sans-serif!important;
@@ -585,21 +586,21 @@
     #header nav ul li .dropdown-content li a::after {
       content: none;
     }
-  
+
     #header .dropdown-content li a::after {
       content: "";
     }
-  
+
     #header nav ul li:hover .dropdown-content {
       display: block!important;
     }
-  
+
     #header nav ul li a {
       color: #fff !important;
       display: block;
       padding:0 !important;
     }
-  
+
     #header nav ul li a::after {
       content: "\f078";
       font-size: 17px;
@@ -608,12 +609,12 @@
       font-family: "FontAwesome";
       margin-left: 5px;
     }
-  
+
     #header nav ul li a:hover:after {
       transform: rotate(180deg);
       transition: all 300ms linear;
     }
-  
+
     #header .text-header-center {
       line-height: normal;
       font-size: 16px;
@@ -635,8 +636,8 @@
     .toggle-menu.toggle-menu-inner #nav-icon3{
       width: 22px!important;
     }
-    
- 
+
+
     #header .toggle-menu.toggle-menu-inner .text-open-menu{
       font-weight: normal;
       line-height: 21px;

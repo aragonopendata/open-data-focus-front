@@ -1,17 +1,17 @@
- <div id= "header"> 
+ <div id= "header">
 <header >
     <section class="section-header">
       <a href="https://www.aragon.es/" class="logo-dga"> <img src="/static/public/header/images/logo-dga-color.svg" alt="Gobierno de Aragón. Ir a la página principal del portal."> </a>
       <div class="header-menu"  >
         <a href="https://www.aragon.es/-/fondos-europeos-aragon" class="european-flag-head" title="Más información sobre los Fondos Estructurales y de Inversión Europeos y Fondo Next Generation EU en Aragón"> <img class="image" src="/static/public/header/images/flag_europe.svg" alt="Unión Europea"> </a>
         <label for="toggle-1" class="toggle-menu" (click)="openNav()">
-          <ul  id="nav-icon3" [ngClass]="{'open': menuActive}">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong class="text-open-menu">MENÚ</strong>
-          </ul>
+          <div  id="nav-icon3" [ngClass]="{'open': menuActive}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong class="text-open-menu">MENÚ</strong>
+          </div>
         </label>
       </div>
     <input type="checkbox" id="toggle-1">
@@ -22,7 +22,6 @@
              <svg xmlns="http://www.w3.org/2000/svg" width="23.334" height="23.334" viewBox="0 0 23.334 23.334">
               <path id="Unión_1" data-name="Unión 1" d="M10.607,10.607,0,21.213,10.607,10.607,0,0,10.607,10.607,21.213,0,10.607,10.607,21.213,21.213Z" transform="translate(1.061 1.061)" fill="none" stroke="#fff" stroke-width="3"/>
             </svg>
-
               <strong class="text-open-menu">Cerrar</strong>
           </ul>
         </label>
@@ -65,7 +64,7 @@
         <div class="content-header-logo">
           <a href="/" class="logo-image"> <img src="/static/public/header/images/logo-opendata.svg" alt="Aragón Open Data" class="img-ch"> </a>
         </div>
-      </div> 
+      </div>
   </section>
   <!-- <script>
     angular.element(document).ready(function(){
