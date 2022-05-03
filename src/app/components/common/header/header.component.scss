@@ -627,9 +627,9 @@
       padding: 0;
     }
 
-    // #nav-label{
-    //   display: none!important;
-    // }
+    #nav-label{
+      display: none!important;
+    }
   }
     @media (max-width: 568px) {
     #header .toggle-menu.toggle-menu-inner{
@@ -661,8 +661,8 @@
         float: right;
         padding: 8px 0px 0 0;
     }
-    // #nav-label{
-    //   display: flex!important;
-    // }
+    #nav-label{
+      display: flex!important;
+    }
 
   }
