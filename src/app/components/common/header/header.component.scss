@@ -626,6 +626,10 @@
       display: none;
       padding: 0;
     }
+
+    #nav-label{
+      display: none!important;
+    }
   }
     @media (max-width: 568px) {
     #header .toggle-menu.toggle-menu-inner{
