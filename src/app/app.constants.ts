@@ -2,7 +2,7 @@ import { Aligns, AlignsType } from "./models/Aligns";
 import { ContentsType, Contents } from "./models/Contents";
 
 export class Constants {
-  public static SERVER_URL = 'https://preopendata.aragon.es';
+  public static SERVER_URL = 'https://opendata.aragon.es';
   public static VISUAL_BACK_SERVER_URL =
     Constants.SERVER_URL + '/apivisualdata';
   public static LIST_ALL_HISTORIES_PATH = '/services/histories';
@@ -32,22 +32,22 @@ export class Constants {
   public static PATH_MODIFIER = '';
 
   // URLS FOCUS
-  public static FOCUS_URL = 'https://preopendata.aragon.es/servicios/focus';
+  public static FOCUS_URL = 'https://opendata.aragon.es/servicios/focus';
 
   // URLS GLOBAL
-  public static AOD_BASE_URL = 'https://preopendata.aragon.es';
+  public static AOD_BASE_URL = 'https://opendata.aragon.es';
   public static PRESUPUESTOS_BASE_URL = 'http://presupuesto.aragon.es';
-  public static AOD_ASSETS_BASE_URL = 'https://preopendata.aragon.es/static';
+  public static AOD_ASSETS_BASE_URL = 'https://opendata.aragon.es/static';
   public static AOD_API_WEB_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/web';
+    'https://opendata.aragon.es/aod/services/web';
   public static AOD_API_ADMIN_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/admin';
+    'https://opendata.aragon.es/aod/services/admin';
   public static AOD_API_SECURITY_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/security';
+    'https://opendata.aragon.es/aod/services/security';
   public static AOD_API_CKAN_BASE_URL =
-    'http://mev-aodfront-01.aragon.local:5000';
+    'http://mov-aodfront-01.aragon.local:5000';
   public static AOD_COLLABORATION_URL =
-    'https://aragon.uservoice.com/forums/192552-datos-que-me-gustar%C3%ADa-reutilizar'; 
+    'https://aragon.uservoice.com/forums/192552-datos-que-me-gustar%C3%ADa-reutilizar';
   public static AOD_GITHUB_URL = 'http://github.com/aragonopendata';
   public static USE_CONDITIONS_URL = 'https://opendata.aragon.es/informacion/open-data#terminos-licencias';
   public static VIDEO_TUTORIAL_URL = 'https://youtu.be/AnNnt6weWx4';
@@ -364,17 +364,17 @@ export class Constants {
   public static STATIC_INFO_OPEN_DATA_SECTION_PARTICIPATION = 'participacion';
   public static STATIC_INFO_OPEN_DATA_SECTION_ARAGON_SERVICES = 'servicios-aragon-open-data';
   public static STATIC_INFO_OPEN_DATA_SECTION_DOCUMENTATION = 'documentacion';
-  public static STATIC_INFO_OPEN_DATA_SECTION_TERMS = 'terminos-licencias'; 
+  public static STATIC_INFO_OPEN_DATA_SECTION_TERMS = 'terminos-licencias';
   public static STATIC_INFO_OPEN_DATA_SECTION_CONDITIONS = 'condiciones-social-data';
   public static STATIC_INFO_EVENTS_SECTION_JACATHON = 'jacathon';
   public static STATIC_INFO_DEVELOPERS_SECTION_INTEROPERABILITY = 'interoperabilidad';
   public static STATIC_INFO_DEVELOPERS_SECTION_TECHNOLOGY = 'tecnologia-utilizada';
   public static STATIC_INFO_DEVELOPERS_SECTION_DIRECT_DOWNLOAD = 'descarga-directa';
-  public static STATIC_INFO_DEVELOPERS_SECTION_METADATES = 'metadatos'; 
+  public static STATIC_INFO_DEVELOPERS_SECTION_METADATES = 'metadatos';
   public static STATIC_INFO_DEVELOPERS_SECTION_TOOLS = 'herramientas';
   public static STATIC_INFO_APIS_SECTION_CKAN = 'api-ckan';
   public static STATIC_INFO_APIS_SECTION_SOCIAL_DATA = 'api-social-data';
-  public static STATIC_INFO_APIS_SECTION_ARAGOPEDIA = 'api-aragopedia'; 
+  public static STATIC_INFO_APIS_SECTION_ARAGOPEDIA = 'api-aragopedia';
   public static STATIC_INFO_APIS_SECTION_ARAGODBPEDIA_1 = 'api-aragodbpedia-1';
   public static STATIC_INFO_APIS_SECTION_ARAGODBPEDIA_2 = 'api-aragodbpedia-2';
   public static STATIC_INFO_APIS_SECTION_GA_OD_CORE = 'api-ga-od-core';
@@ -426,7 +426,7 @@ export class Constants {
   public static ADMIN_DATASET_EDIT_DROPDOWN_VIEWS_SIMBOLOS = { label: 'Símbolos', value: '1' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_VIEWS_PLENO_MUNICIPIO = { label: 'Pleno municipio', value: '2' };
 
-  
+
   public static ADMIN_DATASET_EDIT_DROPDOWN_FORMATS_CSV = { label: 'CSV', value: '1' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_FORMATS_DGN = { label: 'DGN', value: '2' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_FORMATS_DWG = { label: 'DWG', value: '3' };
@@ -453,8 +453,8 @@ export class Constants {
   public static ADMIN_DATASET_EDIT_DROPDOWN_FORMATS_XLSX = { label: 'XLSX', value: '24' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_FORMATS_XML = { label: 'XML', value: '25' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_FORMATS_ZIP = { label: 'ZIP', value: '26' };
-  
-  
+
+
   public static ADMIN_DATASET_EDIT_DROPDOWN_ACCESS_MODES_CSV = { label: 'CSV', value: '1' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_ACCESS_MODES_DGN = { label: 'DGN', value: '2' };
   public static ADMIN_DATASET_EDIT_DROPDOWN_ACCESS_MODES_DWG = { label: 'DWG', value: '3' };
@@ -483,12 +483,12 @@ export class Constants {
   public static ADMIN_DATASET_EDIT_DROPDOWN_ACCESS_MODES_ZIP = { label: 'ZIP', value: '26' };
 
   public static ADMIN_DATASET_ERR_LOAD_DATASET = '200 - undefined';
-  
+
   //ADMIN USER
   public static ADMIN_USER_ROL_GLOBAL_ADMIN = 'global_adm';
   public static ADMIN_USER_ROL_ORGANIZATION_ADMIN = 'org_adm';
   public static ADMIN_USER_ROL_ORGANIZATION_EDITOR = 'org_editor';
-  public static ADMIN_USER_ROL_ORGANIZATION_MEMBER = 'org_member'; 
+  public static ADMIN_USER_ROL_ORGANIZATION_MEMBER = 'org_member';
 
   //ADMIN ORGANIZATION
   public static GROWL_SEVERITY_SUCCESS = 'success';
@@ -508,8 +508,8 @@ export class Constants {
   public static ERROR_ORGANIZATION_GET_ORG = 'Error: loadOrganization() - organizations-admin-edit.component.ts';
 
   //ADMIN LOGIN
-  public static LOGIN_DATA_PARAM_TYPE_ORGANIZATION = 'org';
-  public static LOGIN_DATA_PARAM_TYPE_DATASET = 'dataset'; 
+  public static LOGIN_DATA_PARAM_TYPE_ORGANIZATION = 'org';
+  public static LOGIN_DATA_PARAM_TYPE_DATASET = 'dataset';
 
 
   //ROUTING
@@ -614,8 +614,8 @@ export class Constants {
   public static ROUTER_LINK_DATA_CAMPUS_PARAM_TYPE = 'type';
   public static ROUTER_LINK_DATA_CAMPUS_PARAM_TEXT = 'text';
   public static ROUTER_LINK_TOOLS_CAMPUS_EVENT_NAME = 'eventName';
-  public static ROUTER_LINK_DATA_PARAM_DATA_LOGIN = 'data';
-  public static ROUTER_LINK_DATA_PARAM_EDIT_DATA = 'dataName'; 
+  public static ROUTER_LINK_DATA_PARAM_DATA_LOGIN = 'data';
+  public static ROUTER_LINK_DATA_PARAM_EDIT_DATA = 'dataName';
   public static ROUTER_LINK_STATIC_CONTENT_OPEN_DATA_SECTION_REDIRECT = '/informacion/open-data#';
   public static ROUTER_LINK_STATIC_CONTENT_EVENTS_SECTION_REDIRECT = '/informacion/eventos#';
   public static ROUTER_LINK_STATIC_CONTENT_DEVELOPERS_SECTION_REDIRECT = '/herramientas/desarrolladores#';
@@ -640,7 +640,7 @@ export class Constants {
   public static SERVER_API_LINK_TOPICS = '/topics';
   public static SERVER_API_LINK_TAGS = '/tags';
   public static SERVER_API_LINK_ORGANIZATIONS = '/organizations';
-  public static SERVER_API_LINK_ORGANIZATION = '/organization'; 
+  public static SERVER_API_LINK_ORGANIZATION = '/organization';
   public static SERVER_API_LINK_STATIC_CONTENT_INFO = '/static-content/info';
   public static SERVER_API_LINK_STATIC_CONTENT_INFO_OPEN_DATA = '/open-data';
   public static SERVER_API_LINK_STATIC_CONTENT_INFO_APPLICATIONS = '/applications';
@@ -735,7 +735,6 @@ export class Constants {
   public static ELASTIC_COUNTRIES = Constants.AOD_BASE_URL + "/gapi/get_countries_elastic";
 
 
-  // https://preopendata.aragon.es/GA_OD_Core/preview?resource_id=161&filters={​​​​​​"nivel"%3A"1"}​​​​​​
 
   public static GA_OD_CORE_BASE_URL = 'https://opendata.aragon.es';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC = '/GA_OD_Core';

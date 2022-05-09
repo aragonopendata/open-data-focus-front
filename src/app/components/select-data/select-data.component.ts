@@ -89,24 +89,24 @@ export class SelectDataComponent implements OnInit, OnDestroy {
   ) {
 
     this.route.params.subscribe(params => {
-      this.type=params.type; 
+      this.type=params.type;
     });
 
     if ( !this.navigationService.opened ){
       this.navigationService.opened = 'URL';
     }
-    
+
     //this.tableToShow = 0;
     this.listCkan = ['Cargando Espere'];
     this.listCkanNames = ['Cargando Espere'];
     this.listGaodc = ['Cargando Espere'];
     this.listGaodcID = [];
-    
+
     // this.packagesSelCKAN = '';
     // this.packagesSelURL = '';
     // this.packagesSelSPARQL = '';
     // this.packagesSelGAODC = '';
-    
+
     //this.headerTable = [];
     this.loading = [false, false, false, false]; // CKAN, GAODC, URL, VIRTUOSO
     this.errorResponse = [false, false, false, false]; // CKAN, GAODC, URL, VIRTUOSO
@@ -137,7 +137,7 @@ export class SelectDataComponent implements OnInit, OnDestroy {
           }
         }
       }
-      
+
     }, 100);
 
     //Prepare the ckan list of packages
@@ -188,9 +188,9 @@ export class SelectDataComponent implements OnInit, OnDestroy {
     this.gaodcservice.getPackageList().subscribe(data => {
       this.listGaodc = [];
       data.forEach(element => {
-        if(!this.gaodcDataExcluded.includes(element[0])){
-          this.listGaodc.push(element[1]);
-          this.listGaodcID.push(element[0]);
+        if(!this.gaodcDataExcluded.includes(element.id)){
+          this.listGaodc.push(element.name);
+          this.listGaodcID.push(element.id);
         }
       });
       this.loading[1] = false;
@@ -280,7 +280,7 @@ export class SelectDataComponent implements OnInit, OnDestroy {
         this.querryError = false;
         this.loading[3] = true;
 
-        this.virtuosoCall(this.navigationService.virtuosoPackagesInfo); 
+        this.virtuosoCall(this.navigationService.virtuosoPackagesInfo);
       }
     }
   }
@@ -371,8 +371,8 @@ export class SelectDataComponent implements OnInit, OnDestroy {
     );
   }
 
-  //CKAN Function to retrieve the data (CSV, PX...) the user has selected 
-  //from resource list from a package of data 
+  //CKAN Function to retrieve the data (CSV, PX...) the user has selected
+  //from resource list from a package of data
   selectResource(resource) {
     if (resource.resources.length != 0) {
       this.loading[0] = true;
@@ -463,23 +463,49 @@ export class SelectDataComponent implements OnInit, OnDestroy {
   }
 
   gaodcCall(name: string, numberPackage: number) {
+
     this.navigationService.packagesSelGAODC = name;
+
     this.gaodcservice.getPackageInfo(numberPackage).subscribe(data => {
-      this.navigationService.headerTable = data[0];
+
+      this.navigationService.headerTable = Object.keys(data[0]);
+
       data.splice(0, 1);
-      this.navigationService.dataTable = data;
+
+      data = data.map(res => {
+
+        return Object.values(res);
+
+      });
+
+      this.navigationService.dataTable = data
+
+      // this.navigationService.dataTable = Object.values(data);
+
+
 
       this.openedWithURL = 'GAODC';
 
+
+
       this.packagesInfo = numberPackage.toString();
+
       this.loading[1] = false;
+
       this.loading[2] = false;
+
     },
+
       error => {
+
         this.loading[1] = false;
+
         this.loading[2] = false;
+
         this.errorResponse[1] = true;
+
       });
+
   }
 
   virtuosoCall(namePackage: string) {
@@ -532,7 +558,7 @@ export class SelectDataComponent implements OnInit, OnDestroy {
     if (name === 'URL') {
       this.navigationService.packagesSelURL = '';
     }
-    if (name === 'SPARQL') { 
+    if (name === 'SPARQL') {
       this.navigationService.packagesSelSPARQL = '';
     }
     this.navigationService.dataTable = undefined;
@@ -605,17 +631,17 @@ export class SelectDataComponent implements OnInit, OnDestroy {
       if ( this.accordionCkan.isOpen || this.accordionGAODC || this.accordionSPARQL || this.accordionUrl ){
         this.navigationService.isOpened = true;
       }
-  
+
       if ( who === 'CKAN'){
         this.accordionUrl.isOpen = false;
         this.accordionSPARQL.isOpen = false;
         this.accordionGAODC.isOpen = false;
       }
-      
-      this.navigationService.opened = who;   
+
+      this.navigationService.opened = who;
     }
-     
-    
+
+
   }
 
   resetData(onlyDataTable = false) {
@@ -631,9 +657,9 @@ export class SelectDataComponent implements OnInit, OnDestroy {
           this.navigationService.packagesSelCKAN = '';
         }
       }
-      
+
     }
     this.isBack = false;
-  
+
   }
 }
