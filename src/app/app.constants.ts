@@ -2,7 +2,7 @@ import { Aligns, AlignsType } from "./models/Aligns";
 import { ContentsType, Contents } from "./models/Contents";
 
 export class Constants {
-  public static SERVER_URL = 'https://opendata.aragon.es';
+  public static SERVER_URL = 'https://preopendata.aragon.es';
   public static VISUAL_BACK_SERVER_URL =
     Constants.SERVER_URL + '/apivisualdata';
   public static LIST_ALL_HISTORIES_PATH = '/services/histories';
@@ -32,20 +32,20 @@ export class Constants {
   public static PATH_MODIFIER = '';
 
   // URLS FOCUS
-  public static FOCUS_URL = 'https://opendata.aragon.es/servicios/focus';
+  public static FOCUS_URL = 'https://preopendata.aragon.es/servicios/focus';
 
   // URLS GLOBAL
-  public static AOD_BASE_URL = 'https://opendata.aragon.es';
+  public static AOD_BASE_URL = 'https://preopendata.aragon.es';
   public static PRESUPUESTOS_BASE_URL = 'http://presupuesto.aragon.es';
-  public static AOD_ASSETS_BASE_URL = 'https://opendata.aragon.es/static';
+  public static AOD_ASSETS_BASE_URL = 'https://preopendata.aragon.es/static';
   public static AOD_API_WEB_BASE_URL =
-    'https://opendata.aragon.es/aod/services/web';
+    'https://preopendata.aragon.es/aod/services/web';
   public static AOD_API_ADMIN_BASE_URL =
-    'https://opendata.aragon.es/aod/services/admin';
+    'https://preopendata.aragon.es/aod/services/admin';
   public static AOD_API_SECURITY_BASE_URL =
-    'https://opendata.aragon.es/aod/services/security';
+    'https://preopendata.aragon.es/aod/services/security';
   public static AOD_API_CKAN_BASE_URL =
-    'http://mov-aodfront-01.aragon.local:5000';
+    'http://mev-aodfront-01.aragon.local:5000';
   public static AOD_COLLABORATION_URL =
     'https://aragon.uservoice.com/forums/192552-datos-que-me-gustar%C3%ADa-reutilizar';
   public static AOD_GITHUB_URL = 'http://github.com/aragonopendata';
@@ -735,8 +735,9 @@ export class Constants {
   public static ELASTIC_COUNTRIES = Constants.AOD_BASE_URL + "/gapi/get_countries_elastic";
 
 
+  // https://preopendata.aragon.es/GA_OD_Core/preview?resource_id=161&filters={​​​​​​"nivel"%3A"1"}​​​​​​
 
-  public static GA_OD_CORE_BASE_URL = 'https://opendata.aragon.es';
+  public static GA_OD_CORE_BASE_URL = 'https://preopendata.aragon.es';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC = '/GA_OD_Core';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEWS = '/views';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_PREVIEW = '/preview';
