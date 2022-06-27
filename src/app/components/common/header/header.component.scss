@@ -167,10 +167,10 @@
   float: right;
 }
 
-#header nav ul {
-  display: table;
-  float: right;
-}
+// #header nav ul {
+//   display: table;
+//   float: right;
+// }
 
 #header nav ul li {
   float: left;
@@ -206,7 +206,7 @@
   transition: all 0.5s ease 0s;
 }
 
-#header nav ul {
+#header nav ul:not(.dropdown-content) {
   width: inherit;
   height: 100%;
   display: flex;
@@ -473,7 +473,7 @@
   }
 
   #header nav ul {
-    display: flex;
+    display: none;
     justify-content: normal;
     text-align: left;
     flex-direction: column;
@@ -562,7 +562,7 @@
   }
 
   #header .dropdown-content {
-    display: none !important;
+    display: none;
     position: absolute;
     background-color: #4a4a4a;
     z-index: 1;
@@ -578,7 +578,8 @@
     border-top: 1px solid #437587;
   }
 
-  #header nav ul li .dropdown-content li a {
+  #header nav ul li .dropdown-content li a,
+  #header nav ul li .dropdown-content li label {
     font-size: 16px !important;
     font-family: "open_sans", sans-serif !important;
     padding: 5px 10px !important;
@@ -593,18 +594,26 @@
     content: "";
   }
 
-  #header nav ul li:hover .dropdown-content {
-    display: flex !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+  // #header nav ul li:hover .dropdown-content {
+  //   display: flex !important;
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  // }
 
-  #header nav ul li a {
+  // #header nav ul li input#check-servicios:checked~ul.dropdown-content,
+  // #header nav ul li input#check-datos:checked~ul.dropdown-content,
+  // #header nav ul li input#check-informacion:checked~ul.dropdown-content {
+  //   display: flex !important;
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  // }
+
+  #header nav ul li label {
     color: #fff !important;
     display: block;
     padding: 0 !important;
   }
 
-  #header nav ul li a::after {
+  #header nav ul li a::after,
+  #header nav ul li label::after {
     content: "\f078";
     font-size: 17px;
     line-height: 3.92rem;
@@ -726,12 +735,14 @@
     margin-right: 20px;
   }
 
-  #header nav ul li a {
+  #header nav ul li a,
+  #header nav ul li label {
     font-size: 16px !important;
     transition: all 0.5s ease 0s;
     font-family: "open_sans-bold", sans-serif;
     margin-bottom: 0;
     color: white;
+    font-weight: bold;
   }
 
   #header nav ul li a::after {

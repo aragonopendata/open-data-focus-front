@@ -241,22 +241,53 @@ export class HeaderComponent implements OnInit {
     window.location.href = this.aodBaseUrl + '/' + page + '?texto=' + params;
   }
 
-  abrirDatos() {
-    document.getElementById('dropdown-datos').style.display === 'none' ? document.getElementById('dropdown-datos').style.display = 'flex' : document.getElementById('dropdown-datos').style.display = 'none';
-    document.getElementById('dropdown-servicios').style.display = 'none'
-    document.getElementById('dropdown-informacion').style.display = 'none'
-  }
+  toggleCheck() {
+    // (document.getElementById('check-datos') as HTMLInputElement).checked = false;
+    // (document.getElementById('check-servicios') as HTMLInputElement).checked = false;
+    // (document.getElementById('check-informacion') as HTMLInputElement).checked = false;
 
-  abrirServicios() {
-    document.getElementById('dropdown-servicios').style.display === 'none' ? document.getElementById('dropdown-servicios').style.display = 'flex' : document.getElementById('dropdown-servicios').style.display = 'none';
-    document.getElementById('dropdown-datos').style.display = 'none'
-    document.getElementById('dropdown-informacion').style.display = 'none'
-  }
+    document.addEventListener('click', e => {
+      const id = (e.target as HTMLElement).getAttribute('for');
+      console.log(id);
 
-  abrirInformacion() {
-    document.getElementById('dropdown-informacion').style.display === 'none' ? document.getElementById('dropdown-informacion').style.display = 'flex' : document.getElementById('dropdown-informacion').style.display = 'none';
-    document.getElementById('dropdown-datos').style.display = 'none'
-    document.getElementById('dropdown-servicios').style.display = 'none'
+      if (id === 'check-datos') {
+        if ((document.getElementById('check-datos') as HTMLInputElement).checked) {
+          (document.getElementById('check-datos') as HTMLInputElement).checked = false;
+          (document.getElementById('check-servicios') as HTMLInputElement).checked = false;
+          (document.getElementById('check-informacion') as HTMLInputElement).checked = false;
+        } else {
+          (document.getElementById('check-datos') as HTMLInputElement).checked = true;
+          (document.getElementById('check-servicios') as HTMLInputElement).checked = false;
+          (document.getElementById('check-informacion') as HTMLInputElement).checked = false;
+        }
+      }
+
+      if (id === 'check-servicios') {
+        if ((document.getElementById('check-servicios') as HTMLInputElement).checked) {
+          (document.getElementById('check-datos') as HTMLInputElement).checked = false;
+          (document.getElementById('check-servicios') as HTMLInputElement).checked = false;
+          (document.getElementById('check-informacion') as HTMLInputElement).checked = false;
+        } else {
+          (document.getElementById('check-servicios') as HTMLInputElement).checked = true;
+          (document.getElementById('check-datos') as HTMLInputElement).checked = false;
+          (document.getElementById('check-informacion') as HTMLInputElement).checked = false;
+        }
+      }
+
+      if (id === 'check-informacion') {
+        if ((document.getElementById('check-informacion') as HTMLInputElement).checked) {
+          (document.getElementById('check-datos') as HTMLInputElement).checked = false;
+          (document.getElementById('check-servicios') as HTMLInputElement).checked = false;
+          (document.getElementById('check-informacion') as HTMLInputElement).checked = false;
+        } else {
+          (document.getElementById('check-informacion') as HTMLInputElement).checked = true;
+          (document.getElementById('check-servicios') as HTMLInputElement).checked = false;
+          (document.getElementById('check-datos') as HTMLInputElement).checked = false;
+        }
+      }
+
+    });
+
   }
 
 }

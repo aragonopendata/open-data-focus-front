@@ -31,8 +31,12 @@
               <strong class="text-open-menu">Cerrar</strong>
             </ul>
           </label>
-          <li><a href="#logo" (click)="abrirDatos()">Datos</a>
-            <ul class="dropdown-content" id="dropdown-datos" style="display:none">
+          <li>
+            <!-- <a href="#logo">Datos</a> -->
+            <input type="checkbox" id="check-datos" name="groupA" ngModel="vm.a1"
+              ng-change="vm.a2 = false; vm.a3 = false;">
+            <label for="check-datos" class="check-datos">Datos</label>
+            <ul class="dropdown-content">
               <div class="dropdown-links">
                 <h2 class="dropdown-links__title">Datos</h2>
                 <li><a href="https://opendata.aragon.es/datos/catalogo">Banco de datos</a></li>
@@ -45,8 +49,12 @@
               </div>
             </ul>
           </li>
-          <li><a href="#logo" (click)="abrirServicios()">Servicios</a>
-            <ul class="dropdown-content" id="dropdown-servicios" style="display:none">
+          <li>
+            <!-- <a href="#logo">Servicios</a> -->
+            <input type="checkbox" id="check-servicios" name="groupA" ngModel="vm.a2"
+              ng-change="vm.a1 = false; vm.a3 = false;">
+            <label for="check-servicios" class="check-servicios">Servicios</label>
+            <ul class="dropdown-content">
               <div class="dropdown-links">
                 <h2 class="dropdown-links__title">Servicios</h2>
                 <li><a href="https://opendata.aragon.es/servicios/cobertura">Análisis cobertura</a></li>
@@ -65,8 +73,12 @@
               </div>
             </ul>
           </li>
-          <li><a (click)="abrirInformacion()" href="#logo">Información</a>
-            <ul class="dropdown-content" id="dropdown-informacion" style="display:none">
+          <li>
+            <!-- <a href="#logo">Información</a> -->
+            <input type="checkbox" id="check-informacion" name="groupA" ngModel="vm.a3"
+              ng-change="vm.a1 = false; vm.a2 = false;">
+            <label for="check-informacion" class="check-informacion">Información</label>
+            <ul class="dropdown-content">
               <div class="dropdown-links">
                 <h2 class="dropdown-links__title">Información</h2>
                 <li><a href="https://opendata.aragon.es/informacion/conoce-aragon-open-data-y-los-datos-abiertos">Conoce
@@ -113,4 +125,5 @@
       });
     });
   </script> -->
+
 </div>
