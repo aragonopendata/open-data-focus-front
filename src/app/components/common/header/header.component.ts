@@ -112,25 +112,25 @@ export class HeaderComponent implements OnInit {
     //  this.menuActive = !this.menuActive;
     //   $('#nav').attr('class', 'navbar navbar-toggleable-md bg-inverse');
     //   $('#nav').css('background-color', 'rgba(0,0,0, 0.82)');
-      // $('#nav-icon3').attr('open','open');
-      // this.srcLogin =
-      //   '/static/public/header/images/Boton-Acceso-Usuarios-gris.png';
-      // this.srcMenu =
-      //   '/static/public/header/images/Boton-Salir-Menu-Responsive-OFF.png';
+    // $('#nav-icon3').attr('open','open');
+    // this.srcLogin =
+    //   '/static/public/header/images/Boton-Acceso-Usuarios-gris.png';
+    // this.srcMenu =
+    //   '/static/public/header/images/Boton-Salir-Menu-Responsive-OFF.png';
     // } else {
-      // $('#menu').attr('alt', 'desplegar-menú');
-      // $('body,html').css('overflow-y', 'auto');
-      // $('#myNav').height('0%');
-      // $('#nav').attr('class', 'navbar navbar-toggleable-md bg-light');
-      // $('#logo').attr('src', '/static/public/header/images/AOD-Logo.png');
-      // $('#searchBox').val('');
-      // $('#nav-icon3').css('class','');
-      // this.menuActive = !this.menuActive;
-      // this.srcLogin =
-      //   '/static/public/header/images/Boton-Acceso-Usuarios-OFF.png';
-      // this.srcMenu =
-      //   '/static/public/header/images/Boton-Menu-Responsive-OFF.png';
-      // this.datasetAutocomplete = [];
+    // $('#menu').attr('alt', 'desplegar-menú');
+    // $('body,html').css('overflow-y', 'auto');
+    // $('#myNav').height('0%');
+    // $('#nav').attr('class', 'navbar navbar-toggleable-md bg-light');
+    // $('#logo').attr('src', '/static/public/header/images/AOD-Logo.png');
+    // $('#searchBox').val('');
+    // $('#nav-icon3').css('class','');
+    // this.menuActive = !this.menuActive;
+    // this.srcLogin =
+    //   '/static/public/header/images/Boton-Acceso-Usuarios-OFF.png';
+    // this.srcMenu =
+    //   '/static/public/header/images/Boton-Menu-Responsive-OFF.png';
+    // this.datasetAutocomplete = [];
     // }
   }
 
@@ -192,9 +192,9 @@ export class HeaderComponent implements OnInit {
         title =>
           title
             ? this.datasetService.getDatasetsAutocomplete(
-                title,
-                this.resultsLimit
-              )
+              title,
+              this.resultsLimit
+            )
             : Observable.of<Autocomplete[]>([])
       )
       .catch(error => {
@@ -240,4 +240,23 @@ export class HeaderComponent implements OnInit {
   redirectTo(page, params) {
     window.location.href = this.aodBaseUrl + '/' + page + '?texto=' + params;
   }
+
+  abrirDatos() {
+    document.getElementById('dropdown-datos').style.display === 'none' ? document.getElementById('dropdown-datos').style.display = 'flex' : document.getElementById('dropdown-datos').style.display = 'none';
+    document.getElementById('dropdown-servicios').style.display = 'none'
+    document.getElementById('dropdown-informacion').style.display = 'none'
+  }
+
+  abrirServicios() {
+    document.getElementById('dropdown-servicios').style.display === 'none' ? document.getElementById('dropdown-servicios').style.display = 'flex' : document.getElementById('dropdown-servicios').style.display = 'none';
+    document.getElementById('dropdown-datos').style.display = 'none'
+    document.getElementById('dropdown-informacion').style.display = 'none'
+  }
+
+  abrirInformacion() {
+    document.getElementById('dropdown-informacion').style.display === 'none' ? document.getElementById('dropdown-informacion').style.display = 'flex' : document.getElementById('dropdown-informacion').style.display = 'none';
+    document.getElementById('dropdown-datos').style.display = 'none'
+    document.getElementById('dropdown-servicios').style.display = 'none'
+  }
+
 }

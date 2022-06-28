@@ -1,72 +1,110 @@
- <div id= "header">
-<header >
+<div id="header">
+  <header>
     <section class="section-header">
-      <a href="https://www.aragon.es/" class="logo-dga"> <img src="/static/public/header/images/logo-dga-color.svg" alt="Gobierno de Aragón. Ir a la página principal del portal."> </a>
-      <div class="header-menu"  >
-        <a href="https://www.aragon.es/-/fondos-europeos-aragon" class="european-flag-head" title="Más información sobre los Fondos Estructurales y de Inversión Europeos y Fondo Next Generation EU en Aragón"> <img class="image" src="/static/public/header/images/flag_europe.svg" alt="Unión Europea"> </a>
+      <a href="https://www.aragon.es/" class="logo-dga"> <img src="/static/public/header/images/logo-dga-color.svg"
+          alt="Logo."> </a>
+      <div class="header-menu">
+        <a href="https://www.aragon.es/-/fondos-europeos-aragon" class="european-flag-head" title="Europea">
+          <img class="image" src="/static/public/header/images/flag_europe.svg" alt="Unión Europea"> </a>
+
         <label for="toggle-1" class="toggle-menu" (click)="openNav()">
-          <div  id="nav-icon3" [ngClass]="{'open': menuActive}">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <strong class="text-open-menu">MENÚ</strong>
-          </div>
+          <ul id="nav-icon3" [ngClass]="{'open': menuActive}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong class="text-open-menu">MENÚ</strong>
+          </ul>
         </label>
       </div>
-    <input type="checkbox" id="toggle-1">
-    <nav>
-      <ul>
-        <li id="nav-label">
+      <input type="checkbox" id="toggle-1">
+      <nav>
+        <ul>
           <label for="toggle-1" class="toggle-menu toggle-menu-inner">
-            <span id="nav-icon3">
-               <svg xmlns="http://www.w3.org/2000/svg" width="23.334" height="23.334" viewBox="0 0 23.334 23.334">
-                <path id="Unión_1" data-name="Unión 1" d="M10.607,10.607,0,21.213,10.607,10.607,0,0,10.607,10.607,21.213,0,10.607,10.607,21.213,21.213Z" transform="translate(1.061 1.061)" fill="none" stroke="#fff" stroke-width="3"/>
+            <ul id="nav-icon3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23.334" height="23.334" viewBox="0 0 23.334 23.334">
+                <path id="Unión_1" data-name="Unión 1"
+                  d="M10.607,10.607,0,21.213,10.607,10.607,0,0,10.607,10.607,21.213,0,10.607,10.607,21.213,21.213Z"
+                  transform="translate(1.061 1.061)" fill="none" stroke="#fff" stroke-width="3" />
               </svg>
-                <strong class="text-open-menu">Cerrar</strong>
-            </span>
+
+              <strong class="text-open-menu">Cerrar</strong>
+            </ul>
           </label>
-        </li>
-        <li><a href="#logo">Datos</a>
-          <ul class="dropdown-content">
-            <li><a href="https://opendata.aragon.es/datos/catalogo">Banco de datos</a></li>
-            <li><a href="https://opendata.aragon.es/datos/publicadores">Publicadores</a></li>
-            <li><a href="https://opendata.aragon.es/datos/temas">Temas</a></li>
-          </ul>
-        </li>
-         <li><a href="#logo">Servicios</a>
-          <ul class="dropdown-content">
-            <li><a href="https://opendata.aragon.es/servicios/landing-datos-enlazados">Datos enlazados</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/landing-aragopedia">Aragopedia</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/landing-presupuestos">Presupuestos</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/analytics">Open Analytics Data</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/landing-open-social-data">Open Social Data</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/landing-open-data-focus">Open Data Focus</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/fianzas-alquileres">Alquileres</a></li>
-            <li><a href="https://opendata.aragon.es/servicios/chatbot">Chatbot</a></li>
-          </ul>
-        </li>
-        <li><a class="" href="#logo">Información</a>
-          <ul class="dropdown-content">
-            <li><a href="https://opendata.aragon.es/informacion/conoce-aragon-open-data-y-los-datos-abiertos">Conócenos</a></li>
-            <li><a href="https://opendata.aragon.es/informacion/blog-de-aragon-open-data">Blog</a></li>
-            <li><a href="https://opendata.aragon.es/informacion/herramientas-para-usuarios-as-y-desarrolladores-as">Herramientas y APIs</a></li>
-            <li><a href="https://opendata.aragon.es/informacion/eventos-de-datos-abiertos">Eventos</a></li>
-            <li><a href="https://opendata.aragon.es/informacion/aplicaciones-hechas-con-datos-abiertos-en-aragon-open-data">Aplicaciones</a></li>
-            <li><a href="https://opendata.aragon.es/informacion/colabora-con-tus-propuestas">Colabora</a></li>
-            <li><a href="https://opendata.aragon.es/informacion/terminos-de-uso-licencias">Términos de uso</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </section>
+          <li><a href="#logo" (click)="abrirDatos()">Datos</a>
+            <ul class="dropdown-content" id="dropdown-datos" style="display:none">
+              <div class="dropdown-links">
+                <h2 class="dropdown-links__title">Datos</h2>
+                <li><a href="https://opendata.aragon.es/datos/catalogo">Banco de datos</a></li>
+                <li><a href="https://opendata.aragon.es/datos/publicadores">Publicadores</a></li>
+                <li><a href="https://opendata.aragon.es/datos/temas">Temas</a></li>
+              </div>
+              <div class="dropdown-info">
+                <p>
+                  Consulta toda la información institucional sobre el Gobierno de Aragón. </p>
+              </div>
+            </ul>
+          </li>
+          <li><a href="#logo" (click)="abrirServicios()">Servicios</a>
+            <ul class="dropdown-content" id="dropdown-servicios" style="display:none">
+              <div class="dropdown-links">
+                <h2 class="dropdown-links__title">Servicios</h2>
+                <li><a href="https://opendata.aragon.es/servicios/cobertura">Análisis cobertura</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/landing-presupuestos">Presupuestos</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/landing-open-data-focus">Open Data Focus</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/fianzas-alquileres">Alquileres</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/landing-datos-enlazados">Datos enlazados</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/chatbot">Chatbot</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/landing-aragopedia">Aragopedia</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/analytics">Open Analytics Data</a></li>
+                <li><a href="https://opendata.aragon.es/servicios/landing-open-social-data">Open Social Data</a></li>
+              </div>
+              <div class="dropdown-info">
+                <p>
+                  Consulta toda la información institucional sobre el Gobierno de Aragón. </p>
+              </div>
+            </ul>
+          </li>
+          <li><a (click)="abrirInformacion()" href="#logo">Información</a>
+            <ul class="dropdown-content" id="dropdown-informacion" style="display:none">
+              <div class="dropdown-links">
+                <h2 class="dropdown-links__title">Información</h2>
+                <li><a href="https://opendata.aragon.es/informacion/conoce-aragon-open-data-y-los-datos-abiertos">Conoce
+                    Aragón Open Data y los datos abiertos</a>
+                </li>
+                <li><a href="https://opendata.aragon.es/informacion/blog-de-aragon-open-data">Blog de Aragón Open
+                    Data</a></li>
+                <li><a
+                    href="https://opendata.aragon.es/informacion/herramientas-para-usuarios-as-y-desarrolladores-as">Herramientas
+                    para usuarios/as y desarrolladores/as</a></li>
+                <li><a href="https://opendata.aragon.es/informacion/eventos-de-datos-abiertos">Eventos de datos
+                    abiertos</a></li>
+                <li><a
+                    href="https://opendata.aragon.es/informacion/aplicaciones-hechas-con-datos-abiertos-en-aragon-open-data">Aplicaciones
+                    hechas con datos abiertos en Aragón Open Data</a>
+                </li>
+                <li><a href="https://opendata.aragon.es/informacion/colabora-con-tus-propuestas">Colabora con tus
+                    propuestas</a></li>
+                <li><a href="https://opendata.aragon.es/informacion/terminos-de-uso-licencias">Términos de uso,
+                    licencias</a></li>
+              </div>
+              <div class="dropdown-info">
+                <p>
+                  Consulta toda la información institucional sobre el Gobierno de Aragón. </p>
+              </div>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </section>
   </header>
   <section class="content">
-      <div class="content-header">
-        <div class="content-header-logo">
-          <a href="/" class="logo-image"> <img src="/static/public/header/images/logo-opendata.svg" alt="Aragón Open Data" class="img-ch"> </a>
-        </div>
+    <div class="content-header">
+      <div class="content-header-logo">
+        <a href="/" class="logo-image"> <img src="/static/public/header/images/logo-opendata.svg" alt="Aragón Open Data"
+            class="img-ch"> </a>
       </div>
+    </div>
   </section>
   <!-- <script>
     angular.element(document).ready(function(){
@@ -75,4 +113,4 @@
       });
     });
   </script> -->
-  </div>
+</div>
