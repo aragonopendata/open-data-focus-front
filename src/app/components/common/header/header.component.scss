@@ -875,3 +875,13 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .dropdown-info {
+    display: none;
+  }
+
+  .dropdown-links {
+    flex: 1;
+  }
+}
