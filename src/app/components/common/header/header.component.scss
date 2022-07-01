@@ -452,7 +452,7 @@
   }
 
   #header .logo-dga img {
-    height: 2rem !important;
+    height: 50px !important;
     margin-top: 0.9rem !important;
   }
 
@@ -513,7 +513,7 @@
   }
 
   #header .logo-dga img {
-    height: 40px;
+    height: 50px;
   }
 
   #header #logo {
@@ -689,7 +689,7 @@
   }
 
   .logo-dga img {
-    height: 40px;
+    height: 50px;
     margin: 0.6rem;
   }
 
@@ -874,6 +874,10 @@
   .dropdown-links__title {
     display: none;
   }
+
+  #header .content-header-logo img {
+    height: 35px !important;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -883,5 +887,9 @@
 
   .dropdown-links {
     flex: 1;
+  }
+
+  .dropdown-links__title {
+    font-size: 16px;
   }
 }
