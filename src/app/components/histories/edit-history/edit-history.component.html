@@ -267,195 +267,197 @@
               <img [src]="this.historiesService.getIconCategory(category.id)"
                 alt="Imagen de la categoría {{category.name}}">
               <div class="text">{{category.name}}</div>
-          </li>
-      </div>
-      </ul>
-
-      <div class="modal-footer">
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-outline-secondary"
-          (click)="hiddenModalCategories()">Cancelar</button>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- Modal Successfull History -->
-<div class="modal fade successfullModal" id="successfullModalCenter" tabindex="-1" role="dialog"
-  aria-labelledby="successfullModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" *ngIf="!loadingModal">
-      <div class="modal-header">
-        <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title size-title-modal"
-          *ngIf="historyBack.state != stateEnum.publicada" id="successfullModalCenterTitle">¡Historia guardada
-          correctamente!</div>
-        <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title"
-          *ngIf="historyBack.state == stateEnum.publicada" id="successfullModalCenterTitle">¡Historia publicada
-          correctamente!</div>
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal" aria-label="Close"
-          (click)="viewHistory()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div *ngIf=firstTime>
-          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.borrador">Su historia
-            <b>{{historyModel.title}}</b>, se ha guardado correctamente con el siguiente token. Apúntelo para poder
-            gestionar la historia
-          </p>
-          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.revision">Su historia
-            <b>{{historyModel.title}}</b>, se ha enviado correctamente para su revisión con el siguiente token.
-          </p>
-          <div class="tokenSite col-12">
-            <textarea tabindex="{{openedMenu ? -1 : 0}}" readonly #tokenGenerate id="history_token"
-              class="tokenTextArea">{{historyModel.token}}</textarea>
-            <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn fa fa-copy"
-              (click)="copyToken()"></button>
-          </div>
-          <div *ngIf=!haveMail>
-            <div class="modal-header">
-              <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title size-subtitle"
-                id="emailModalCenterTitle">¿Desea realizar un seguimiento de la historia?</div>
             </div>
-            <form [formGroup]="emailForm">
-              <div class="modal-body">
-                <p tabindex="{{openedMenu ? -1 : 0}}"> Puede dejar su correo para ser notificado cuando se produzcan
-                  algunos cambios en el estado de su historia o si desea recibir el token en su correo electrónico</p>
-                <input tabindex="{{openedMenu ? -1 : 0}}" type="text" id="email" class="form-control"
-                  placeholder="Email" [class.is-invalid]="invalidEmail"
-                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$" formControlName="email"
-                  (keyup.enter)="saveMailForm($event)">
-                <small *ngIf="invalidEmail" class="text-danger">Introduzca un email válido</small>
+          </li>
+        </ul>
+
+        <div class="modal-footer">
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-outline-secondary"
+            (click)="hiddenModalCategories()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal Successfull History -->
+  <div class="modal fade successfullModal" id="successfullModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="successfullModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" *ngIf="!loadingModal">
+        <div class="modal-header">
+          <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title size-title-modal"
+            *ngIf="historyBack.state != stateEnum.publicada" id="successfullModalCenterTitle">¡Historia guardada
+            correctamente!</div>
+          <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title"
+            *ngIf="historyBack.state == stateEnum.publicada" id="successfullModalCenterTitle">¡Historia publicada
+            correctamente!</div>
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal" aria-label="Close"
+            (click)="viewHistory()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div *ngIf=firstTime>
+            <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.borrador">Su historia
+              <b>{{historyModel.title}}</b>, se ha guardado correctamente con el siguiente token. Apúntelo para poder
+              gestionar la historia
+            </p>
+            <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.revision">Su historia
+              <b>{{historyModel.title}}</b>, se ha enviado correctamente para su revisión con el siguiente token.
+            </p>
+            <div class="tokenSite col-12">
+              <textarea tabindex="{{openedMenu ? -1 : 0}}" readonly #tokenGenerate id="history_token"
+                class="tokenTextArea">{{historyModel.token}}</textarea>
+              <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn fa fa-copy"
+                (click)="copyToken()"></button>
+            </div>
+            <div *ngIf=!haveMail>
+              <div class="modal-header">
+                <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title size-subtitle"
+                  id="emailModalCenterTitle">¿Desea realizar un seguimiento de la historia?</div>
               </div>
-              <div class="modal-footer">
-                <button tabindex="{{openedMenu ? -1 : 0}}" type="submit" class="btn btn-primary"
-                  [ngClass]="emailForm.invalid ? 'disabled' : '' " (click)="saveMailForm($event)">Enviar</button>
-              </div>
-            </form>
+              <form [formGroup]="emailForm">
+                <div class="modal-body">
+                  <p tabindex="{{openedMenu ? -1 : 0}}"> Puede dejar su correo para ser notificado cuando se produzcan
+                    algunos cambios en el estado de su historia o si desea recibir el token en su correo electrónico</p>
+                  <input tabindex="{{openedMenu ? -1 : 0}}" type="text" id="email" class="form-control"
+                    placeholder="Email" [class.is-invalid]="invalidEmail"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$" formControlName="email"
+                    (keyup.enter)="saveMailForm($event)">
+                  <small *ngIf="invalidEmail" class="text-danger">Introduzca un email válido</small>
+                </div>
+                <div class="modal-footer">
+                  <button tabindex="{{openedMenu ? -1 : 0}}" type="submit" class="btn btn-primary"
+                    [ngClass]="emailForm.invalid ? 'disabled' : '' " (click)="saveMailForm($event)">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div *ngIf=!firstTime>
+            <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.borrador">Su historia
+              <b>{{historyModel.title}}</b> se ha guardado correctamente
+            </p>
+            <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.revision">Su historia
+              <b>{{historyModel.title}}</b> se ha enviado correctamente
+            </p>
+            <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.publicada">La historia
+              <b>{{historyModel.title}}</b> ha sido publicada
+            </p>
           </div>
         </div>
-        <div *ngIf=!firstTime>
-          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.borrador">Su historia
-            <b>{{historyModel.title}}</b> se ha guardado correctamente
-          </p>
-          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.revision">Su historia
-            <b>{{historyModel.title}}</b> se ha enviado correctamente
-          </p>
-          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="historyBack.state == stateEnum.publicada">La historia
-            <b>{{historyModel.title}}</b> ha sido publicada
-          </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Error History -->
+  <div class="modal fade errorModal" id="errorModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="errorModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header form-section-title">
+          <div tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(isAdmin || (historyBack.state != stateEnum.revision))"
+            class="modal-title" id="errorModalCenterTitle">Se ha producido un error</div>
+          <div tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(!isAdmin && (historyBack.state == stateEnum.revision))"
+            class="modal-title" id="errorModalCenterTitle">Operación no permitida</div>
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(isAdmin || (historyBack.state != stateEnum.revision))">Se ha
+            producido un error al procesar la acción solicitada</p>
+          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(!isAdmin && (historyBack.state == stateEnum.revision))"> Una vez
+            que la historia ha sido enviada a aprobación, no se pueden hacer nuevas modificaciones</p>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Modal Error History -->
-<div class="modal fade errorModal" id="errorModalCenter" tabindex="-1" role="dialog"
-  aria-labelledby="errorModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header form-section-title">
-        <div tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(isAdmin || (historyBack.state != stateEnum.revision))"
-          class="modal-title" id="errorModalCenterTitle">Se ha producido un error</div>
-        <div tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(!isAdmin && (historyBack.state == stateEnum.revision))"
-          class="modal-title" id="errorModalCenterTitle">Operación no permitida</div>
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(isAdmin || (historyBack.state != stateEnum.revision))">Se ha
-          producido un error al procesar la acción solicitada</p>
-        <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="(!isAdmin && (historyBack.state == stateEnum.revision))"> Una vez
-          que la historia ha sido enviada a aprobación, no se pueden hacer nuevas modificaciones</p>
+  <!-- Modal Error History -->
+  <div class="modal fade errorModal" id="errorModalNumber" tabindex="-1" role="dialog"
+    aria-labelledby="errorModalNumberTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header form-section-title">
+          <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title" id="errorModalNumberTitle">Gr&aacute;fica no
+            permitida</div>
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p tabindex="{{openedMenu ? -1 : 0}}">En este apartado tan solo se permiten valores numéricos.</p>
+          <p tabindex="{{openedMenu ? -1 : 0}}"> Si desea crear otro tipo de gr&aacute;fica, cree una sección en la
+            parte inferior. </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Modal Error History -->
-<div class="modal fade errorModal" id="errorModalNumber" tabindex="-1" role="dialog"
-  aria-labelledby="errorModalNumberTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header form-section-title">
-        <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title" id="errorModalNumberTitle">Gr&aacute;fica no
-          permitida</div>
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p tabindex="{{openedMenu ? -1 : 0}}">En este apartado tan solo se permiten valores numéricos.</p>
-        <p tabindex="{{openedMenu ? -1 : 0}}"> Si desea crear otro tipo de gr&aacute;fica, cree una sección en la
-          parte inferior. </p>
+  <!-- Question Content Previous -->
+  <div class="modal fade errorModal" id="questionContPrevious" tabindex="-1" role="dialog"
+    aria-labelledby="questionContPreviousTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title" id="questionContPreviousTitle">
+            Advertencia</div>
+        </div>
+        <div class="modal-body">
+          <p tabindex="{{openedMenu ? -1 : 0}}">Si edita la sección, perderá los cambios de la sección que se está
+            editando en este momento. ¿Desea continuar?</p>
+        </div>
+        <div class="modal-footer">
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-outline-secondary"
+            (click)="confirmEditContent(false)">Cancelar</button>
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-primary"
+            (click)="confirmEditContent(true)">Confirmar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Question Content Previous -->
-<div class="modal fade errorModal" id="questionContPrevious" tabindex="-1" role="dialog"
-  aria-labelledby="questionContPreviousTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title" id="questionContPreviousTitle">
-          Advertencia</div>
-      </div>
-      <div class="modal-body">
-        <p tabindex="{{openedMenu ? -1 : 0}}">Si edita la sección, perderá los cambios de la sección que se está
-          editando en este momento. ¿Desea continuar?</p>
-      </div>
-      <div class="modal-footer">
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-outline-secondary"
-          (click)="confirmEditContent(false)">Cancelar</button>
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-primary"
-          (click)="confirmEditContent(true)">Confirmar</button>
+  <!-- Question History -->
+  <div class="modal fade errorModal" id="questionDeleteContent" tabindex="-1" role="dialog"
+    aria-labelledby="questionDeleteContentTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div *ngIf="!(!previousButton && (!deleteBodyCont || (!showAddContent && deleteBodyCont)))"
+            tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title" id="questionDeleteContentTitle">
+            Advertencia</div>
+          <div *ngIf="!previousButton && (!deleteBodyCont || (!showAddContent && deleteBodyCont))"
+            tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title" id="questionDeleteContentTitle">
+            Borrar sección</div>
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal" aria-label="Close"
+            (click)="closeDeleteContentModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="showAddContent && !previousButton && deleteBodyCont">Por favor,
+            antes de eliminar una sección, guarde o cierre la sección que se está editando</p>
+          <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="previousButton">Si realiza esta acción, la sección que está
+            editando se perderá. ¿Desea continuar con la acción y perderlo o volver para guardar el mismo? </p>
+          <p tabindex="{{openedMenu ? -1 : 0}}"
+            *ngIf="!previousButton && (!deleteBodyCont || (!showAddContent && deleteBodyCont))">¿Está seguro que quiere
+            eliminar la sección? Una vez eliminado, no se podrá recuperar</p>
+        </div>
+        <div class="modal-footer">
+          <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-outline-secondary"
+            (click)="closeDeleteContentModal()">Volver</button>
+          <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf="!deleteBodyCont && !previousButton" type="button"
+            class="btn btn-primary" (click)="confirmDeleteContent()">Confirmar</button>
+          <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf="!showAddContent  && !previousButton && deleteBodyCont"
+            type="button" class="btn btn-primary" (click)="confirmDeleteContent()">Confirmar</button>
+          <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf="previousButton" type="button" class="btn btn-primary"
+            (click)="getHistoryForm(null, false)">Confirmar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Question History -->
-<div class="modal fade errorModal" id="questionDeleteContent" tabindex="-1" role="dialog"
-  aria-labelledby="questionDeleteContentTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div *ngIf="!(!previousButton && (!deleteBodyCont || (!showAddContent && deleteBodyCont)))"
-          tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title" id="questionDeleteContentTitle">
-          Advertencia</div>
-        <div *ngIf="!previousButton && (!deleteBodyCont || (!showAddContent && deleteBodyCont))"
-          tabindex="{{openedMenu ? -1 : 0}}" class="modal-title form-section-title" id="questionDeleteContentTitle">
-          Borrar sección</div>
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="close" data-dismiss="modal" aria-label="Close"
-          (click)="closeDeleteContentModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="showAddContent && !previousButton && deleteBodyCont">Por favor,
-          antes de eliminar una sección, guarde o cierre la sección que se está editando</p>
-        <p tabindex="{{openedMenu ? -1 : 0}}" *ngIf="previousButton">Si realiza esta acción, la sección que está
-          editando se perderá. ¿Desea continuar con la acción y perderlo o volver para guardar el mismo? </p>
-        <p tabindex="{{openedMenu ? -1 : 0}}"
-          *ngIf="!previousButton && (!deleteBodyCont || (!showAddContent && deleteBodyCont))">¿Está seguro que quiere
-          eliminar la sección? Una vez eliminado, no se podrá recuperar</p>
-      </div>
-      <div class="modal-footer">
-        <button tabindex="{{openedMenu ? -1 : 0}}" type="button" class="btn btn-outline-secondary"
-          (click)="closeDeleteContentModal()">Volver</button>
-        <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf="!deleteBodyCont && !previousButton" type="button"
-          class="btn btn-primary" (click)="confirmDeleteContent()">Confirmar</button>
-        <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf="!showAddContent  && !previousButton && deleteBodyCont"
-          type="button" class="btn btn-primary" (click)="confirmDeleteContent()">Confirmar</button>
-        <button tabindex="{{openedMenu ? -1 : 0}}" *ngIf="previousButton" type="button" class="btn btn-primary"
-          (click)="getHistoryForm(null, false)">Confirmar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>
