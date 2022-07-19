@@ -1,6 +1,6 @@
 .visualTitle {
   font-family: RobotoLight, sans-serif;
-  color: #5ea2ba;
+  color: #508A9F;
 }
 
 .def {
@@ -8,38 +8,47 @@
 }
 
 
-.graph-container, .graph-donut-container{
+.graph-container,
+.graph-donut-container {
   min-height: 300px;
 }
 
-.modal{
-  .close{
+.modal {
+  .close {
     position: absolute;
     right: 8px;
   }
 }
-.display-table{
+
+.display-table {
   max-height: 90vh;
   width: calc(100% - 16px);
   overflow: auto;
 }
+
 .display-row {
   display: table-row;
 }
+
 .display-cell {
   display: table-cell;
   padding: 5px;
-  &.bold{
+
+  &.bold {
     font-weight: bold;
   }
 }
 
+.btn-graphic:focus {
+  font-weight: bold;
+}
+
 
 @media screen and (max-width: 1024px) {
-  
-  .graph-donut-big-legend, .graph-big-legend{
+
+  .graph-donut-big-legend,
+  .graph-big-legend {
     min-height: 900px;
   }
-  
-} 
 
+}

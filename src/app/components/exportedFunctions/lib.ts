@@ -418,7 +418,7 @@ export function getRandomColor(n) {
   }else{
     //Default colors
     const color = [
-      {backgroundColor: '#5ea2ba'},
+      {backgroundColor: '#508A9F'},
       {backgroundColor: 'rgb(255, 99, 132)'},
       {backgroundColor: 'rgb(54, 162, 235)'},
       {backgroundColor: 'rgb(255, 206, 86)'},

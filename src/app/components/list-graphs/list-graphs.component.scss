@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.btn-outline-primary{
+.btn-outline-primary {
   cursor: pointer;
 }
 
@@ -40,7 +40,8 @@
   border-top: 16px solid #3498db;
   width: 120px;
   height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
   animation: spin 2s linear infinite;
 }
 
@@ -49,6 +50,7 @@
   0% {
     -webkit-transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
   }
@@ -58,6 +60,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -65,7 +68,7 @@
 
 .visualTitle {
   font-family: RobotoLight, sans-serif;
-  color: #5ea2ba;
+  color: #508A9F;
 }
 
 .pointer {
