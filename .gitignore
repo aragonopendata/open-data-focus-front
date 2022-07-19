@@ -42,6 +42,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/Dockerfile
+/docker-compose.yml
 
 package-lock\.json
 
