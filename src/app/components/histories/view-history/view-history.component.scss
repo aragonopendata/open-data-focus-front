@@ -65,6 +65,19 @@ code {
                 margin-left: 18px;
                 text-align: center;
             }
+
+            h2.title-text {
+                position: absolute;
+                bottom: 0;
+                font-size: 48px;
+                color: #fff;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                display: block;
+                margin-right: 18px;
+                margin-left: 18px;
+                text-align: center;
+            }
         }
     }
 
@@ -215,19 +228,6 @@ code {
                 h1 {
                     margin-right: 18px;
                     margin-left: 18px;
-                }
-
-                h2.title-text {
-                    position: absolute;
-                    bottom: 0;
-                    font-size: 48px;
-                    color: #fff;
-                    text-transform: uppercase;
-                    margin-bottom: 0;
-                    display: block;
-                    margin-right: 18px;
-                    margin-left: 18px;
-                    text-align: center;
                 }
 
             }

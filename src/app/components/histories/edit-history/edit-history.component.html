@@ -261,13 +261,11 @@
         </div>
 
         <ul class="modal-body">
-          <li>
-            <div *ngFor="let category of categories; let i = index" tabindex="{{openedMenu ? -1 : 0}}"
-              (click)="selectCategory(category)" [ngClass]="{'disabled': category.selected}">
-              <img [src]="this.historiesService.getIconCategory(category.id)"
-                alt="Imagen de la categoría {{category.name}}">
-              <div class="text">{{category.name}}</div>
-            </div>
+          <li *ngFor="let category of categories; let i = index" tabindex="{{openedMenu ? -1 : 0}}"
+            (click)="selectCategory(category)" [ngClass]="{'disabled': category.selected}">
+            <img [src]="this.historiesService.getIconCategory(category.id)"
+              alt="Imagen de la categoría {{category.name}}">
+            <div class="text">{{category.name}}</div>
           </li>
         </ul>
 

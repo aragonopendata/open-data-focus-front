@@ -388,6 +388,7 @@
 .modal-body li {
     width: 200px;
     list-style: none;
+    margin: 15px auto;
 }
 
 .modal-body li div img {
@@ -615,4 +616,12 @@
             width: 100%;
         }
     }
+}
+
+// Accessibility
+
+.modal-body li img {
+    width: 76px;
+    margin: auto;
+    display: block;
 }
