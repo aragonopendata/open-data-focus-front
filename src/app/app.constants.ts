@@ -15,7 +15,7 @@ export class Constants {
 
   public static LIST_ALL_CHARTS_PATH = '/services/charts';
   public static LIST_TYPE_CHARTS_PATH =
-  Constants.LIST_ALL_CHARTS_PATH + '/type_chart';
+    Constants.LIST_ALL_CHARTS_PATH + '/type_chart';
   public static SAVE_CHART_PATH =
     Constants.LIST_ALL_CHARTS_PATH + '/save_chart';
   public static SAVE_PROCESS_PATH =
@@ -32,20 +32,20 @@ export class Constants {
   public static PATH_MODIFIER = '';
 
   // URLS FOCUS
-  public static FOCUS_URL = 'https://preopendata.aragon.es/servicios/focus';
+  public static FOCUS_URL = 'https://opendata.aragon.es/servicios/focus';
 
   // URLS GLOBAL
-  public static AOD_BASE_URL = 'https://preopendata.aragon.es';
+  public static AOD_BASE_URL = 'https://opendata.aragon.es';
   public static PRESUPUESTOS_BASE_URL = 'http://presupuesto.aragon.es';
-  public static AOD_ASSETS_BASE_URL = 'https://preopendata.aragon.es/static';
+  public static AOD_ASSETS_BASE_URL = 'https://opendata.aragon.es/static';
   public static AOD_API_WEB_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/web';
+    'https://opendata.aragon.es/aod/services/web';
   public static AOD_API_ADMIN_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/admin';
+    'https://opendata.aragon.es/aod/services/admin';
   public static AOD_API_SECURITY_BASE_URL =
-    'https://preopendata.aragon.es/aod/services/security';
+    'https://opendata.aragon.es/aod/services/security';
   public static AOD_API_CKAN_BASE_URL =
-    'http://mev-aodfront-01.aragon.local:5000';
+    'http://mov-aodfront-01.aragon.local:5000';
   public static AOD_COLLABORATION_URL =
     'https://aragon.uservoice.com/forums/192552-datos-que-me-gustar%C3%ADa-reutilizar';
   public static AOD_GITHUB_URL = 'http://github.com/aragonopendata';
@@ -332,14 +332,14 @@ export class Constants {
   public static DATASET_EXTRA_TYPE_ARAGOPEDIA = 'typeAragopedia';
   public static DATASET_EXTRA_URI_ARAGOPEDIA = 'uriAragopedia';
   public static DATASET_EXTRA_SPATIAL = 'Spatial';
-  public static DATASET_EXTRA_LANG_ES= 'langES';
-  public static DATASET_EXTRA_LANG_EN= 'langEN';
-  public static DATASET_EXTRA_LANG_FR= 'langFR';
-  public static DATASET_EXTRA_LANG_ARG= 'langARG';
-  public static DATASET_EXTRA_LANG_OTHER= 'langOtherValue';
-  public static DATASET_DETAIL_CKAN_PREVIEW_URL_PARAM_DATASET= '/dataset/';
-  public static DATASET_DETAIL_CKAN_PREVIEW_URL_PARAM_RESOURCE= '/resource/';
-  public static DATASET_DETAIL_CKAN_PREVIEW_URL_PARAM_VIEW= '/view/';
+  public static DATASET_EXTRA_LANG_ES = 'langES';
+  public static DATASET_EXTRA_LANG_EN = 'langEN';
+  public static DATASET_EXTRA_LANG_FR = 'langFR';
+  public static DATASET_EXTRA_LANG_ARG = 'langARG';
+  public static DATASET_EXTRA_LANG_OTHER = 'langOtherValue';
+  public static DATASET_DETAIL_CKAN_PREVIEW_URL_PARAM_DATASET = '/dataset/';
+  public static DATASET_DETAIL_CKAN_PREVIEW_URL_PARAM_RESOURCE = '/resource/';
+  public static DATASET_DETAIL_CKAN_PREVIEW_URL_PARAM_VIEW = '/view/';
 
   public static DATASET_EXTRA_IAEST_TEMA_ESTADISTICO = '01_IAEST_Tema estadístico';
   public static DATASET_EXTRA_IAEST_UNIDAD_ESTADISTICA = '02_IAEST_Unidad Estadística';
@@ -655,7 +655,7 @@ export class Constants {
   public static SERVER_API_LINK_CAMPUS_EVENTS = '/campus/events';
   public static SERVER_API_LINK_CAMPUS_EVENT = '/campus/event';
   public static SERVER_API_LINK_CAMPUS_CONTENTS = '/campus/contents';
-  public static SERVER_API_URL_CAMPUS_CONTENT= '/campus/content';
+  public static SERVER_API_URL_CAMPUS_CONTENT = '/campus/content';
   public static SERVER_API_LINK_CAMPUS_TYPES = '/campus/types';
   public static SERVER_API_LINK_CAMPUS_SPEAKERS = '/campus/speakers';
   public static SERVER_API_LINK_CAMPUS_TOPICS = '/campus/topics';
@@ -741,7 +741,7 @@ export class Constants {
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC = '/GA_OD_Core';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEWS = '/views';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_PREVIEW = '/preview';
-  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_NAME_CATEGORIES='NOMBRE'
+  public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_NAME_CATEGORIES = 'NOMBRE'
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID = 'resource_id';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID_NUMBER_TOPICS = '161';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC_FILTER_SQL = 'filters';
@@ -750,50 +750,50 @@ export class Constants {
 
 
 
-  public static ROUTER_LINK_ADD_HISTORY='/add/history';
-  public static ROUTER_LINK_EDIT_HISTORY='/editHistory';
-  public static ROUTER_LINK_PREVIEW_HISTORY='previewHistory';
+  public static ROUTER_LINK_ADD_HISTORY = '/add/history';
+  public static ROUTER_LINK_EDIT_HISTORY = '/editHistory';
+  public static ROUTER_LINK_PREVIEW_HISTORY = 'previewHistory';
 
 
-  public static ROUTER_LINK_ADD_CONTENT='add/content';
-  public static ROUTER_LINK_VIEW_HISTORY='/history';
+  public static ROUTER_LINK_ADD_CONTENT = 'add/content';
+  public static ROUTER_LINK_VIEW_HISTORY = '/history';
 
-  public static LOCALSTORAGE_KEY_MAIL='email';
-  public static LOCALSTORAGE_KEY_HISTORY='previewHistoryLS';
-  public static ROUTER_LINK_SERVICES_ADMIN='/services/admin';
-  public static ROUTER_LINK_FOCUS='/focus';
-  public static ROUTER_LINK_ENTIRE_HISTORY='/history';
-  public static ROUTER_LINK_ENTIRE_HISTORY_BY_URL='/history/url';
-  public static ROUTER_LINK_ENTIRE_HISTORY_AND_EMAIL='/history/mail';
-  public static ROUTER_LINK_ENTIRE_HISTORY_BY_TOKEN='/history/token';
-  public static ROUTER_LINK_ALL_HISTORIES='/histories';
-  public static ROUTER_LINK_TOKEN_STATE='/token/state';
-  public static ROUTER_LINK_IMAGE_CATEGORY='/imageCategory';
-
-
+  public static LOCALSTORAGE_KEY_MAIL = 'email';
+  public static LOCALSTORAGE_KEY_HISTORY = 'previewHistoryLS';
+  public static ROUTER_LINK_SERVICES_ADMIN = '/services/admin';
+  public static ROUTER_LINK_FOCUS = '/focus';
+  public static ROUTER_LINK_ENTIRE_HISTORY = '/history';
+  public static ROUTER_LINK_ENTIRE_HISTORY_BY_URL = '/history/url';
+  public static ROUTER_LINK_ENTIRE_HISTORY_AND_EMAIL = '/history/mail';
+  public static ROUTER_LINK_ENTIRE_HISTORY_BY_TOKEN = '/history/token';
+  public static ROUTER_LINK_ALL_HISTORIES = '/histories';
+  public static ROUTER_LINK_TOKEN_STATE = '/token/state';
+  public static ROUTER_LINK_IMAGE_CATEGORY = '/imageCategory';
 
 
-  public static PREVIEW_HISTORY="PREVIEW"
-  public static SAVE_HISTORY="SAVE"
-  public static UPDATE_HISTORY="UPDATE"
-  public static POST_HISTORY_ADMIN="UPDATE_ADMIN"
 
 
-  public static ALIGN_LEFT_TEXT="Descripción a la derecha, fuente de datos a la izquierda"
+  public static PREVIEW_HISTORY = "PREVIEW"
+  public static SAVE_HISTORY = "SAVE"
+  public static UPDATE_HISTORY = "UPDATE"
+  public static POST_HISTORY_ADMIN = "UPDATE_ADMIN"
+
+
+  public static ALIGN_LEFT_TEXT = "Descripción a la derecha, fuente de datos a la izquierda"
   public static ALIGN_LEFT = new AlignsType(Constants.ALIGN_LEFT_TEXT, Aligns.left)
-  public static ALIGN_RIGHT_TEXT="Descripción a la izquierda, fuente de datos a la derecha"
+  public static ALIGN_RIGHT_TEXT = "Descripción a la izquierda, fuente de datos a la derecha"
   public static ALIGN_RIGHT = new AlignsType(Constants.ALIGN_RIGHT_TEXT, Aligns.right)
-  public static ALIGNS_TYPES =[Constants.ALIGN_LEFT, Constants.ALIGN_RIGHT]
+  public static ALIGNS_TYPES = [Constants.ALIGN_LEFT, Constants.ALIGN_RIGHT]
 
-  public static CONTENT_GRAPH_TEXT="Gráficos con datos de Aragón Open Data"
+  public static CONTENT_GRAPH_TEXT = "Gráficos con datos de Aragón Open Data"
   public static CONTENT_GRAPH = new ContentsType(Constants.CONTENT_GRAPH_TEXT, Contents.graph)
-  public static CONTENT_YOUTUBE_TEXT="Vídeo de YouTube"
+  public static CONTENT_YOUTUBE_TEXT = "Vídeo de YouTube"
   public static CONTENT_YOUTUBE = new ContentsType(Constants.CONTENT_YOUTUBE_TEXT, Contents.youtube)
-  public static CONTENT_SHARESLIDES_TEXT="Presentación de Slideshare"
+  public static CONTENT_SHARESLIDES_TEXT = "Presentación de Slideshare"
   public static CONTENT_SHARESLIDES = new ContentsType(Constants.CONTENT_SHARESLIDES_TEXT, Contents.shareSlides)
-  public static CONTENT_URL_IMG_TEXT="Imagen desde URL"
+  public static CONTENT_URL_IMG_TEXT = "Imagen desde URL"
   public static CONTENT_URL_IMG = new ContentsType(Constants.CONTENT_URL_IMG_TEXT, Contents.img)
-  public static CONTENTS_TYPES =[Constants.CONTENT_GRAPH, Constants.CONTENT_YOUTUBE, Constants.CONTENT_SHARESLIDES,Constants.CONTENT_URL_IMG]
+  public static CONTENTS_TYPES = [Constants.CONTENT_GRAPH, Constants.CONTENT_YOUTUBE, Constants.CONTENT_SHARESLIDES, Constants.CONTENT_URL_IMG]
 
   public static API_SLIDESHARE_CONVERT_URL_TO_EMBED = "https://www.slideshare.net/api/oembed/2"
 
