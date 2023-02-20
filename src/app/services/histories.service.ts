@@ -40,6 +40,8 @@ export class HistoriesService {
 
   public getCategories(): Observable<Category[]> {
     let fullUrl = Constants.GA_OD_CORE_BASE_URL + Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC + Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_PREVIEW;
+    console.log(fullUrl);
+
     let params = new URLSearchParams();
     params.append(Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID, Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_VIEW_ID_NUMBER_TOPICS);
     params.append(Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_FILTER_SQL, Constants.SERVER_API_LINK_GA_OD_CORE_PUBLIC_SQL_NIVEL_1);

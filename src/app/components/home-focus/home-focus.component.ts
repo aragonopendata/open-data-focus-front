@@ -149,6 +149,8 @@ export class HomeFocusComponent implements OnInit {
     this._historiesService.getHistoriesBySearch(this.textSearch, this.categorySearch === null ? null : this.categorySearch.toString()).subscribe(response => {
       if (response.success) {
         this.histories = response.history;
+        console.log(this.histories);
+
       } else {
         console.log("error cargando historias")
       }
