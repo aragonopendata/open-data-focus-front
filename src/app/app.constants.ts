@@ -2,7 +2,7 @@ import { Aligns, AlignsType } from "./models/Aligns";
 import { ContentsType, Contents } from "./models/Contents";
 
 export class Constants {
-  public static SERVER_URL = 'https://preopendata.aragon.es';
+  public static SERVER_URL = 'https://opendata.aragon.es';
   public static VISUAL_BACK_SERVER_URL =
     Constants.SERVER_URL + '/apivisualdata';
   public static LIST_ALL_HISTORIES_PATH = '/services/histories';
@@ -735,7 +735,6 @@ export class Constants {
   public static ELASTIC_COUNTRIES = Constants.AOD_BASE_URL + "/gapi/get_countries_elastic";
 
 
-  // https://preopendata.aragon.es/GA_OD_Core/preview?resource_id=161&filters={​​​​​​"nivel"%3A"1"}​​​​​​
 
   public static GA_OD_CORE_BASE_URL = 'https://opendata.aragon.es';
   public static SERVER_API_LINK_GA_OD_CORE_PUBLIC = '/GA_OD_Core';
@@ -803,4 +802,3 @@ export class Constants {
 
 
 }
-

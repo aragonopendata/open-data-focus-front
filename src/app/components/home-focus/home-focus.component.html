@@ -37,8 +37,7 @@
           <span class="nav-link" [ngClass]="
               category.id == categorySearch ? 'selected' : 'noSelected'
             " (click)="getHistories(searchInput.value, category.id)">
-            <img width="30" height="30" class="category-img"
-              [src]="this._historiesService.getIconCategory(category.id, category.name)"
+            <img width="30" height="30" class="category-img" [src]="this._historiesService.getIconCategory(category.id)"
               alt="Imagen de la categoría {{category.name}}">
             {{ category.name }}</span>
 
@@ -56,7 +55,7 @@
             <div tabindex="{{ openedMenu ? -1 : 0 }}" class="card" (click)="getHistory($event, history.url)"
               (keyup)="getHistory($event, history.url)">
               <img class="category-img" [src]="
-                    this._historiesService.getIconCategory(history.main_category, history.url)
+                    this._historiesService.getIconCategory(history.main_category)
                   " alt="Imagen de la categoría" />
               <div class="opacity"></div>
               <div class="text">

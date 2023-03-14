@@ -1,19 +1,18 @@
-
 <!-- Error -->
 <div class="container" *ngIf="errorTitle">
   <div class="alert alert-info" role="alert">
-      <div class="row">
-          <div class="col-xs-3">
-              <i class="fa fa-exclamation-triangle fa-5x" style="margin:15px;color: #5ea2ba;"></i>
-          </div>
-          <div class="col-xs-9">
-              <h1>{{errorTitle}}</h1>
-              <h2>{{errorMessage}}</h2>
-              <a class="mail" href="mailto:opendata@aragon.es">
-                  <h2> <i class="fa fa-envelope"></i> Contactar con el Administrador</h2>
-              </a>
-          </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <i class="fa fa-exclamation-triangle fa-5x" style="margin:15px;color: #5ea2ba;"></i>
       </div>
+      <div class="col-xs-9">
+        <h1>{{errorTitle}}</h1>
+        <h2>{{errorMessage}}</h2>
+        <a class="mail" href="mailto:opendata@aragon.es">
+          <h2> <i class="fa fa-envelope"></i> Contactar con el Administrador</h2>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -23,16 +22,17 @@
     <i class="fa fa-info-circle"></i>
     <div>
       <p class='not-found-title'>La historia a la que intenta acceder no existe</p>
-      <p>Puede consultar las historias disponibles a través de este <a title='Home Open Data Focus' routerLink="/{{routerLinkHome}}">link</a></p>
+      <p>Puede consultar las historias disponibles a través de este <a title='Home Open Data Focus'
+          routerLink="/{{routerLinkHome}}">link</a></p>
     </div>
-    
+
   </div>
 </div>
 
 <!-- Loading -->
 <div class="loading text-center" *ngIf="loading">
-  <div class="loadingText">Cargando historia</div><br/><br/>
-  <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i><br/><br/> 
+  <div class="loadingText">Cargando historia</div><br /><br />
+  <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i><br /><br />
 </div>
 
 <!-- History -->
@@ -43,7 +43,7 @@
     <div class="view-history-title">
 
       <div class="view-history-title_img">
-         <img src="{{imageUrl}}" class="icon card-img-top" alt="Fotografía de la historia">
+        <img src="{{imageUrl}}" class="icon card-img-top" alt="Fotografía de la historia">
       </div>
 
       <div class="view-history-title_text">
@@ -53,10 +53,10 @@
     </div>
 
     <div class="view-history-subtitle">
-        <div class="view-history-subtitle__description">
-          <p [innerHTML]="historySelect.description" tabindex="{{openedMenu ? -1 : 0}}"></p>
-        </div>
-        <!-- <div class="view-history-subtitle__values" *ngIf="aditionalInfo && aditionalInfo.length > 0">
+      <div class="view-history-subtitle__description">
+        <p [innerHTML]="historySelect.description" tabindex="{{openedMenu ? -1 : 0}}"></p>
+      </div>
+      <!-- <div class="view-history-subtitle__values" *ngIf="aditionalInfo && aditionalInfo.length > 0">
           <div *ngFor="let info of orderAdditionalInfo(); let i = index" class="view-history-subtitle__value" tabindex="{{openedMenu ? -1 : 0}}">
             <div class="number">{{info.value}}</div>
             <div class="text">{{info.text}}</div>
@@ -66,54 +66,58 @@
     </div>
 
     <div class="view-history-categories" *ngIf="selectedCategories.length != 0">
-      <div class="view-history-category" *ngFor="let secondCategory of selectedCategories; let i = index" tabindex="{{openedMenu ? -1 : 0}}">
-        <img [src]="this.historiesService.getIconCategory(secondCategory.id)" alt="Imagen de la categoría {{secondCategory.name}}">
+      <div class="view-history-category" *ngFor="let secondCategory of selectedCategories; let i = index"
+        tabindex="{{openedMenu ? -1 : 0}}">
+        <img [src]="this.historiesService.getIconCategory(secondCategory.id)"
+          alt="Imagen de la categoría {{secondCategory.name}}">
         <div class="text">{{secondCategory.name}}</div>
         <span class="sr-only">Categoría a la que pertenece historia: {{secondCategory.name}}</span>
       </div>
     </div>
 
     <div class="view-history-contents" *ngIf="bodyContents && bodyContents.length > 0">
-      <div *ngFor="let content of orderBodyContents(); let odd = odd" class="view-history-content" [ngClass]="{'odd':odd, 'reverse': content.align === alignEnum.left}">
-      
-          <div class="view-history-content__text" *ngIf="content.title || content.description" [ngClass]="{'only-title': !content.description}">
-            <p tabindex="{{openedMenu ? -1 : 0}}" class="view-history-content__text-title">{{content.title}}</p>
-            <p *ngIf="content.description" tabindex="{{openedMenu ? -1 : 0}}" class="view-history-content__text-desc" [innerHTML]="content.description"></p>
-          </div>
+      <div *ngFor="let content of orderBodyContents(); let odd = odd" class="view-history-content"
+        [ngClass]="{'odd':odd, 'reverse': content.align === alignEnum.left}">
 
-          <!-- Si es grafica -->
-          <div class="view-history-content__visual graph" [ngClass]="{'only-title': !content.description}" tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.graph">
-            <iframe 
-              title='Gráfica de datos del portal de Aragón Open Data, el cual da apoyo al contenido de la historia'
-              appIframeResizer *ngIf="content.srcGraph" 
-              class="thread-content"
-              [src]="content.srcGraph"
-              scrolling="no" frameborder="0"></iframe>
-          </div>
+        <div class="view-history-content__text" *ngIf="content.title || content.description"
+          [ngClass]="{'only-title': !content.description}">
+          <p tabindex="{{openedMenu ? -1 : 0}}" class="view-history-content__text-title">{{content.title}}</p>
+          <p *ngIf="content.description" tabindex="{{openedMenu ? -1 : 0}}" class="view-history-content__text-desc"
+            [innerHTML]="content.description"></p>
+        </div>
 
-          <!-- Si es video youtube -->
-          <div class="view-history-content__visual" [ngClass]="{'only-title': !content.description}" tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.youtube">
-            <iframe *ngIf="content.srcYoutube" 
-            title='Video de YouTube el cual da apoyo al contenido de la historia'
-            width="560" height="315" [src]="content.srcYoutube"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          </div>
+        <!-- Si es grafica -->
+        <div class="view-history-content__visual graph" [ngClass]="{'only-title': !content.description}"
+          tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.graph">
+          <iframe title='Gráfica de datos del portal de Aragón Open Data, el cual da apoyo al contenido de la historia'
+            appIframeResizer *ngIf="content.srcGraph" class="thread-content" [src]="content.srcGraph" scrolling="no"
+            frameborder="0"></iframe>
+        </div>
 
-          <!-- Si es slideshare -->
-          <div class="view-history-content__visual" [ngClass]="{'only-title': !content.description}" tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.shareSlides">
-            <iframe *ngIf="content.srcSlideShare" 
-            title='Slideshare el cual da apoyo al contenido de la historia'
-            width="595" height="485" [src]='content.srcSlideShare' marginwidth="0" scrolling = "no"
+        <!-- Si es video youtube -->
+        <div class="view-history-content__visual" [ngClass]="{'only-title': !content.description}"
+          tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.youtube">
+          <iframe *ngIf="content.srcYoutube" title='Video de YouTube el cual da apoyo al contenido de la historia'
+            width="560" height="315" [src]="content.srcYoutube" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Si es slideshare -->
+        <div class="view-history-content__visual" [ngClass]="{'only-title': !content.description}"
+          tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.shareSlides">
+          <iframe *ngIf="content.srcSlideShare" title='Slideshare el cual da apoyo al contenido de la historia'
+            width="595" height="485" [src]='content.srcSlideShare' marginwidth="0" scrolling="no"
             style="border:1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;"
             allowfullscreen></iframe>
-          </div>
+        </div>
 
-          <!-- Si es imagen -->
-          <div class="view-history-content__visual" [ngClass]="{'only-title': !content.description}" tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.img">
-            <img *ngIf="content.visual_content" title='Imagen la cual da apoyo a la sección de la historia' [src]='content.visual_content'>
-          </div>
-            
+        <!-- Si es imagen -->
+        <div class="view-history-content__visual" [ngClass]="{'only-title': !content.description}"
+          tabindex="{{openedMenu ? -1 : 0}}" *ngIf="content.type_content === contentEnum.img">
+          <img *ngIf="content.visual_content" title='Imagen la cual da apoyo a la sección de la historia'
+            [src]='content.visual_content'>
+        </div>
+
       </div>
     </div>
 
