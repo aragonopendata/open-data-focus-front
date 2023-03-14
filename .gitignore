@@ -48,3 +48,6 @@ package-lock\.json
 /src/**/*.map
 
 /src/**/*.js
+
+docker-compose.yml
+enviroment-install.sh
