@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  angular-app:
+    build:
+      context: .
+      args:
+        - BASE_HREF="/servicios/focus/"
+    ports:
+      - "80:80"
+    environment:
+ #     - NODE_ENV='entorno, des, pre, o pro'
