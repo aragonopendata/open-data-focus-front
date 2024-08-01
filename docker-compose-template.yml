@@ -1,12 +1,19 @@
 version: '3.8'
 
 services:
-  angular-app:
+  focus-front-app:
     build:
       context: .
       args:
         - BASE_HREF="/servicios/focus/"
     ports:
-      - "80:80"
+      - "9100:4200"
     environment:
- #     - NODE_ENV='entorno, des, pre, o pro'
+#     - NODE_ENV=des, pre or pro
+    networks: 
+     - infraestructura_opendata
+
+networks:
+  infraestructura_opendata:
+    name: infraestructura_opendata
+    external: true
