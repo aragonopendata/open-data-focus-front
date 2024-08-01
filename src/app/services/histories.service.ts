@@ -236,32 +236,37 @@ export class HistoriesService {
 
   getIconCategory(id) {
 
-    if (id === 1261) {
+    if (id === 221) {
       return "https://opendata.aragon.es/static/public/i/temas/12-Justicia.png"
-    } else if (id === 1262) {
+    } else if (id === 227) {
       return "https://opendata.aragon.es/static/public/i/temas/18-Sociedad.png"
-    } else if (id === 1263) {
+    } else if (id === 195) {
       return "https://opendata.aragon.es/static/public/i/temas/15-Salud.png"
-    } else if (id === 1264) {
+    } else if (id === 82) {
       return "https://opendata.aragon.es/static/public/i/temas/07-Educacion.png"
-    } else if (id === 1265) {
+    } else if (id === 103) {
       return "https://opendata.aragon.es/static/public/i/temas/08-Empleo.png"
-    } else if (id === 1266) {
+    } else if (id === 48) {
       return "https://opendata.aragon.es/static/public/i/temas/02-Comercio.png"
-    } else if (id === 1267) {
+    } else if (id === 13) {
       return "https://opendata.aragon.es/static/public/i/temas/14-MedioRural.png"
-    } else if (id === 1268) {
+    } else if (id === 149) {
       return "https://opendata.aragon.es/static/public/i/temas/13-Medioambiente.png"
-    } else if (id === 1269) {
-      return "https://opendata.aragon.es/static/public/i/temas/11-Industria.png"
-    } else if (id === 1270) {
+    } else if (id === 56) {
       return "https://opendata.aragon.es/static/public/i/temas/03-Cultura.png"
-    } else if (id === 1271) {
+    } else if (id === 288) {
       return "https://opendata.aragon.es/static/public/i/temas/22-Vivienda.png"
-    } else if (id === 1272) {
+    } else if (id === 270) {
       return "https://opendata.aragon.es/static/public/i/temas/19-Transporte.png"
+    } else if (id === 1) {
+      return "https://opendata.aragon.es/static/public/i/temas/16-SectorPublico.png"
+    } else if (id === 42) {
+      return "https://opendata.aragon.es/static/public/i/temas/01-Ciencia.png"
+    } else if (id === 124) {
+      return "https://opendata.aragon.es/static/public/i/temas/10-Hacienda.png"
+    } else if (id === 131) {
+      return "https://opendata.aragon.es/static/public/i/temas/09-Energia.png"
     }
 
   }
-
 }
