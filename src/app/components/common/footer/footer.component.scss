@@ -108,10 +108,12 @@ a {
 }
 
 #footer .footer-links .container-list .footer-title {
-  color: #4a4a4a;
+  color: #000000;
   font-weight: bold;
-  font-size: 20px !important;
+  font-size: 16px !important;
+  font-family: 'open_sans-bold';
   display: block;
+  letter-spacing: 0em;
   margin-top: 10px;
   margin-bottom: 0;
 }
@@ -153,7 +155,13 @@ a {
 }
 
 #footer .footer-contact-list .info-arag a {
-  color: #5e616b;
+  color: #808188;
+  font-family: 'OpenSans-Regular';  
+}
+
+#footer .footer-contact-list .info-arag p{
+  font-family: 'OpenSans-Regular';
+  letter-spacing: 0em;
 }
 
 #footer .footer-contact-list a {
