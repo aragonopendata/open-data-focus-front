@@ -1,895 +1,292 @@
-/* HEADER */
-@font-face {
-  font-family: "open_sans-semibolditalic";
-  src: url("https://opendata.aragon.es/static/public/fonts/opensans-semibolditalic.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-semibolditalic.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-semibolditalic.ttf") format("truetype"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-semibolditalic.svg#open_sansextrabold") format("svg");
-  font-weight: normal;
-  font-style: normal;
+/*************************************MEDIA QUERYS*********************************/
+@media screen and (min-width: 0px) and (max-width: 575px) {
+  .footer__europe-mobile {
+    flex-direction: column !important;
+    justify-content: space-around !important;
+  }
+
+  header .header__logo,
+  header .header__menu {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
 }
 
-@font-face {
-  font-family: "open_sans";
-  src: url("https://opendata.aragon.es/static/public/fonts/opensans-regular-webfont.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-regular-webfont.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-regular-webfont.ttf") format("truetype"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-regular-webfont.svg#open_sansregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .footer__europe-mobile {
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  header .header__logo,
+  header .header__menu {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
 }
 
-@font-face {
-  font-family: "open_sans-semibold";
-  src: url("https://opendata.aragon.es/static/public/fonts/opensans-semibold-webfont.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-semibold-webfont.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-semibold-webfont.ttf") format("truetype"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
-  font-weight: normal;
-  font-style: normal;
+@media screen and (min-width: 992px) and (max-width: 1279px) {
+  .footer__europe-mobile {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  header .header__logo,
+  header .header__menu {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
 }
 
-@font-face {
-  font-family: "open_sans-bold";
-  src: url("https://opendata.aragon.es/static/public/fonts/opensans-bold.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-bold.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-bold.ttf") format("truetype"),
-    url("https://opendata.aragon.es/static/public/fonts/opensans-bold.svg#open_sanssemibold") format("svg");
-  font-weight: normal;
-  font-style: normal;
+/*MEDIA QUERY PARA RESOLUCONES GRANDES*/
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .footer__europe-mobile {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  header .header__logo,
+  header .menu,
+  header .show {
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+  }
 }
 
-@font-face {
-  font-family: "Signika-Bold";
-  src: url("https://opendata.aragon.es/static/public/fonts/Signika-Bold.eot");
-  src: url("https://opendata.aragon.es/static/public/fonts/Signika-Bold.eot?#iefix") format("embedded-opentype"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-Bold.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-Bold.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+@media screen and (min-width: 1440px) and (max-width: 1650px) {
+  .footer__europe-mobile {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  header .header__logo,
+  header .menu,
+  header .show {
+    padding-left: 230px !important;
+    padding-right: 230px !important;
+  }
 }
 
-@font-face {
-  font-family: "Signika-SemiBold";
-  src: url("https://opendata.aragon.es/static/public/fonts/Signika-SemiBold.eot");
-  src: url("https://opendata.aragon.es/static/public/fonts/Signika-SemiBold.eot?#iefix") format("embedded-opentype"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-SemiBold.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-SemiBold.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
+@media screen and (min-width: 1651px) and (max-width: 1980px) {
+  .footer__europe-mobile {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
 }
 
-@font-face {
-  font-family: "Signika";
-  src: url("https://opendata.aragon.es/static/public/fonts/Signika-Regular.eot");
-  src: url("https://opendata.aragon.es/static/public/fonts/Signika-Regular.eot?#iefix") format("embedded-opentype"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-Regular.woff2") format("woff2"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-Regular.woff") format("woff"),
-    url("https://opendata.aragon.es/static/public/fonts/Signika-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+.footer__europe-mobile {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 16px !important;
 }
 
-/* HEADER */
-#header html {
-  text-decoration: none;
+.d-flex {
+  display: flex;
+}
+
+.c-h4 {
+  text-decoration: underline;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(0, 71, 92);
+}
+
+header {
+  padding-top: 10px;
+  background-color: white;
+  /*tipo de letra general para todo el componente del header*/
+  // font-family: "Open Sans", ui-sans-serif, system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+header .header__logo {
+  border-bottom: 1px solid #92949B !important;
+  padding-bottom: 8PX;
+}
+
+.opendata__header {
+  background-image: url(../../../../assets/img/opendata-background-header.jpg);
+  background-color: #ededec;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 169px;
+}
+
+.opendata__header__logo {
+  display: flex;
+  margin: auto 0;
+  width: 100%;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.c-ul--no-bullets li {
   list-style: none;
-  margin: 0px;
-  padding: 0px;
-  outline: none;
-  box-sizing: border-box;
+  padding-bottom: 8px !important;
 }
 
-#header ul {
-  padding: 0;
+.c-ul--no-bullets {
+  padding-left: 0px;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
 }
 
-#header section {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  display: table;
-  position: relative;
-}
-
-#header h1 {
-  margin: 150px auto;
-  display: table;
-  font-size: 26px;
-  padding: 40px 0px;
-  text-align: center;
-}
-
-#header h1 span {
-  font-weight: 500;
-}
-
-#header header {
-  width: 100%;
-  display: flex;
-  background-color: #333;
-}
-
-#header header::before {
-  content: "";
-  width: 100%;
-  position: relative;
-  height: 0.5rem;
-  background: #fdcb33;
-  background: -moz-linear-gradient(left,
-      #fdcb33 0%,
-      #fdcb33 33%,
-      #fa9902 33%,
-      #fa9902 66%,
-      #f05442 66%,
-      #f05442 100%,
-      #f1f1f1 100%,
-      #f05442 100%,
-      #f05442 100%);
-  background: -webkit-linear-gradient(left,
-      #fdcb33 0%,
-      #fdcb33 33%,
-      #fa9902 33%,
-      #fa9902 66%,
-      #f05442 66%,
-      #f05442 100%,
-      #f1f1f1 100%,
-      #f05442 100%,
-      #f05442 100%);
-  background: linear-gradient(to right,
-      #fdcb33 0%,
-      #fdcb33 33%,
-      #fa9902 33%,
-      #fa9902 66%,
-      #f05442 66%,
-      #f05442 100%,
-      #f1f1f1 100%,
-      #f05442 100%,
-      #f05442 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdcb33', endColorstr='#f05442', GradientType=1);
-  position: absolute;
-  top: 0;
-}
-
-#header #header #logo {
-  float: left;
-  font-size: 24px;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: 600;
-  padding: 20px 0px;
-}
-
-#header nav {
-  width: auto;
-  float: right;
-}
-
-// #header nav ul {
-//   display: table;
-//   float: right;
-// }
-
-#header nav ul li {
-  float: left;
-}
-
-#header nav ul li:last-child {
-  padding-right: 0px;
-}
-
-#header nav ul li a {
-  font-size: 20px !important;
-  transition: all 0.5s ease 0s;
-  font-family: "open_sans", sans-serif;
-  margin-bottom: 0;
-}
-
-#header nav ul li a:hover {
+.c-link {
   text-decoration: none;
+  color: inherit;
+  font-style: normal;
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
-
-#header nav ul li ul li {
-  width: 100%
+.font-semibold {
+  font-weight: 400px !important;
 }
 
-#header nav ul li ul li a:hover {
-  font-weight: bold;
+/*Estilos para los links como titulo o submenú*/
+.c-link:hover {
+  color: #00607a;
+  text-decoration: underline;
+}
+.c-link:focus, .nav-item-item:focus {
+  background-color: #fdcb33;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: #1f2331;
+  box-shadow: 0 0 transparent, 0 0 transparent, inset 0 -2px 0 0 #1f2331;
+}
+.c-link:focus-within, .nav-item-item:focus-within {
+  background-color: #fdcb33;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: #1f2331;
+  box-shadow: 0 0 transparent, 0 0 transparent, inset 0 -2px 0 0 #08090c;
+}
+.nav-item-item {
+  font-family: inherit;
+  color: #00607a;
+  font-weight: 700;
+  text-decoration: underline;
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-#header nav ul li a i {
-  padding-right: 10px;
-  color: #d0d8e0;
-  transition: all 0.5s ease 0s;
+.justify-content-end {
+  justify-content: end;
 }
 
-#header nav ul:not(.dropdown-content) {
-  width: inherit;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 0;
+.align-items-stretch {
+  align-items: stretch;
 }
 
-#header nav ul:not(.dropdown-content) {
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
   align-items: center;
 }
 
-#header nav ul li {
-  float: none;
-  // padding: 0px;
-  display: table;
+.site-title {
+  margin-bottom: 0px !important;
 }
 
-#header .toggle-menu ul {
-  display: table;
-  width: 25px;
-}
-
-#header .toggle-menu ul li {
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
-  margin-bottom: 4px;
-}
-
-#header .toggle-menu ul li:last-child {
-  margin-bottom: 0px;
-}
-
-#header input[type="checkbox"],
-#header label {
+/* Clase para el estado oculto del menú */
+.menu {
+  opacity: 0;
+  transform: scaleY(0);
+  /* Inicialmente colapsado verticalmente */
+  transform-origin: top;
+  /* Ancla la transformación desde la parte superior */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  /* Transiciones para transformación y opacidad */
   display: none;
+  /* Oculto por defecto */
 }
 
-#header .content-header {
-  background-image: url(/static/public/header/images/opendata-background-header.jpg);
-  height: 169px;
-  background-color: #f2f2f2;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-#header .content {
-  max-width: inherit;
-}
-
-.logo-image {
-  text-align: center !important;
-}
-
-#header .content-header-logo {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
-
-#header .content-header-logo img {
-  margin-top: 50px;
-}
-
-#header .content-header::after {
-  content: "";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdcb33', endColorstr='#f05442', GradientType=1);
-  width: 100%;
-  position: absolute;
-  background: #5ea2ba;
-  height: 0.5rem;
-  bottom: 1px;
-}
-
-#header .logo-dga {
-  display: inline-block;
-}
-
-/* Icon */
-
-#header #nav-icon3 {
-  width: 49px;
-  height: 40px;
-  position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-  margin-top: 0px;
-}
-
-#header #nav-icon3 span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 50%;
-  background: #ffffff;
-  border-radius: 9px;
+/* Clase para el estado visible del menú */
+.show {
   opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
+  transform: scaleY(1);
+  /* Escala vertical completa */
+  display: block;
+  border-bottom: 1px solid #92949B;
+  /* Mostrar como bloque */
 }
 
-#header #nav-icon3 span:nth-child(1) {
-  top: 0px;
+.c-button:focus {
+  background-color: #fdcb33;
+  border-color: #fdcb33;
+  box-shadow: transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #1f2331 0px 0px 0px 3px;
+  color: #1f2331;
+  border-radius: 5px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  cursor: pointer;
 }
 
-#header #nav-icon3 span:nth-child(2),
-#header #nav-icon3 span:nth-child(3) {
-  top: 11px;
+.c-button:focus {
+  background-color: #fdcb33;
+  border-color: #fdcb33;
+  box-shadow: transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #1f2331 0px 0px 0px 3px;
+  color: #1f2331;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  cursor: pointer;
 }
 
-#header #nav-icon3 span:nth-child(4) {
-  top: 22px;
-}
-
-#header #nav-icon3.open span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-
-#header #nav-icon3.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-#header #nav-icon3.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-#header #nav-icon3.open span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-
-#header .header-menu {
-  float: right;
-}
-
-#header .european-flag-head .image {
-  border-right: 0.1rem solid #fff;
-  padding: 0 2rem 0;
-}
-
-/* quitar espacio sección */
-.focus {
-  margin-top: 0 !important;
-}
-
-@media only screen and (max-width: 320px) {
-  #header header {
-    padding: 0.85rem 0 1.15rem 1.25rem;
-  }
-
-  #header .european-flag-head .image {
-    margin-right: 0px !important;
-    padding: 0 20px 0 !important;
-    border-right: none !important;
-  }
-
-  #header h1 {
-    padding: 20px 0px;
-  }
-
-  #header .content-header-logo img {
-    width: 90%;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  #header h1 {
-    font-size: 20px;
-  }
-
-  #header label {
-    padding: 5px 0px;
-  }
-
-  #header #logo {
-    font-size: 20px;
-  }
-
-  #header nav {
-    top: 47px;
-  }
-
-  #header .nav ul {
-    display: grid !important;
-  }
-
-  #header .european-flag-head img {
-    padding: 0 1rem 0;
-    margin-right: 26px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  #header section {
-    max-width: 90%;
-  }
-
-  #header .nav ul {
-    display: grid !important;
-  }
-}
-
-@media only screen and (max-width: 618px) {
-  #header h1 {
-    padding: 25px 0px;
-  }
-
-  #header h1 span {
-    display: block;
-  }
-
-  #header .content-header-logo img {
-    width: 95%;
-    padding: 8px;
-  }
-
-  #header .logo-dga img {
-    height: 50px !important;
-    margin-top: 0.9rem !important;
-  }
-
-  #header .european-flag-head .image {
-    padding: 0 1rem 0;
-    margin-right: 26px;
-  }
-
-  #header nav {
-    display: block;
-    height: 642px !important;
-    width: inherit;
-    position: fixed !important;
-    right: 0px;
-    top: 0 !important;
-    padding: 30px !important;
-  }
-
-  #header nav ul {
-    display: none;
-    justify-content: normal;
-    text-align: left;
-    flex-direction: column;
-  }
-
-  #header nav ul li {
-    float: none;
-    // padding: 0px;
-    display: table;
-    width: stretch;
-  }
-
-  #header nav ul li a {
-    font-size: 24px !important;
-  }
-
-  #header .dropdown-content {
-    // padding: 15px 0 0 0 !important;
-    position: initial !important;
-    margin-bottom: 15px;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  #header header {
-    padding: 1rem 1.5rem 1.3rem;
-    margin: 0 auto;
-  }
-
-  #header section {
-    max-width: 95%;
-  }
-}
-
-@media only screen and (max-width: 1980px) {
-  #header header {
-    padding: 19px 0 0 0;
-  }
-
-  #header .logo-dga img {
-    height: 50px;
-  }
-
-  #header #logo {
-    padding: 0px;
-  }
-
-  #header input[type="checkbox"] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-    background: none;
-  }
-
-  #header input[type="checkbox"]:fous {
-    background: none;
-  }
-
-  #header label {
-    float: right;
-    padding: 8px 0px 8px 56px;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  #header input[type="checkbox"]:checked~nav {
-    display: block;
-  }
-
-  #header .text-open-menu {
-    top: 30px;
-    position: relative;
-    right: 10px;
-    color: #fff;
-  }
-
-  #header nav {
-    display: none;
-    position: absolute;
-    top: 80px;
-    background-color: #4a4a4a;
-    padding: 0px;
-    z-index: 99;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  #header .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #4a4a4a;
-    z-index: 1;
-    // padding: 0 15px 15px;
-  }
-
-  #header .dropdown-content a {
-    border-left: 1px solid #437587;
-    border-bottom: 1px solid #437587;
-  }
-
-  #header .dropdown-content li:first-child a {
-    border-top: 1px solid #437587;
-  }
-
-  #header nav ul li .dropdown-content li a,
-  #header nav ul li .dropdown-content li label {
-    font-size: 16px !important;
-    font-family: "open_sans", sans-serif !important;
-    font-weight: normal;
-    display: block;
-  }
-
-  #header nav ul li .dropdown-content li a::after {
-    content: none;
-  }
-
-  #header .dropdown-content li a::after {
-    content: "";
-  }
-
-  // #header nav ul li:hover .dropdown-content {
-  //   display: flex !important;
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  // }
-
-  // #header nav ul li input#check-servicios:checked~ul.dropdown-content,
-  // #header nav ul li input#check-datos:checked~ul.dropdown-content,
-  // #header nav ul li input#check-informacion:checked~ul.dropdown-content {
-  //   display: flex !important;
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  // }
-
-  #header nav ul li label {
-    color: #fff !important;
-    display: block;
-    padding: 0 !important;
-  }
-
-  #header nav ul li a::after,
-  #header nav ul li label::after {
-    content: "\f078";
-    font-size: 17px;
-    line-height: 3.92rem;
-    line-height: 2.8rem;
-    font-family: "FontAwesome";
-    margin-left: 5px;
-  }
-
-  #header nav ul li a:hover:after {
-    transform: rotate(180deg);
-    transition: all 300ms linear;
-  }
-
-  #header .text-header-center {
-    line-height: normal;
-    font-size: 16px;
-    text-align: center !important;
-    font-family: "Signika", sans-serif;
-    margin-bottom: 50px;
-  }
-
-  #header .toggle-menu.toggle-menu-inner {
-    display: none;
-    padding: 0;
-  }
-}
-
-@media (max-width: 618px) {
-  #header .toggle-menu.toggle-menu-inner {
-    display: inline-flex;
-    padding: 0;
-  }
-
-  .toggle-menu.toggle-menu-inner #nav-icon3 {
-    width: 22px !important;
-  }
-
-
-  #header .toggle-menu.toggle-menu-inner .text-open-menu {
-    font-weight: normal;
-    line-height: 21px;
-    top: 0;
-    left: 38px;
-    font-size: 23px;
-    position: absolute;
-  }
-
-  #header .european-flag-head .image {
-    padding: 8px 1rem 0;
-    margin-right: 26px;
-    width: 90px;
-  }
-
-  #header label {
-    float: right;
-    padding: 8px 0px 0 0;
-  }
+.c-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #00607a;
+  border-radius: 2px;
 
 }
 
-// new header
+.menu-button {
+  display: flex;
+  align-items: center;
+  padding: 7px 15px 7px 8px !important;
+  font-size: 14px;
+  color: #005366;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 20px;
+  position: relative;
+  /*tipo de letra general para todo el componente del header*/
+  // font-family: "Open Sans", ui-sans-serif, system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-family: 'Open Sans', sans-serif !important;
 
-@media (max-width: 620px) {
-  .dropdown-info {
-    display: none;
-  }
 }
 
-@media (min-width: 620px) {
-
-  header {
-    //   padding: 20px 0 !important;
-    height: 90px;
-  }
-
-  .logo-dga img {
-    height: 50px;
-    margin: 0.6rem;
-  }
-
-  #header nav {
-    display: flex;
-    position: static;
-    height: 100%;
-    background-color: transparent;
-    padding: 0;
-    justify-content: space-around;
-    width: 100%;
-    justify-content: flex-start;
-    width: auto;
-    align-items: center;
-    flex: 0 0 65%;
-  }
-
-  .toggle-menu,
-  .nav-icon3 {
-    display: none !important;
-  }
-
-  #header section.section-header {
-    width: 98%;
-    max-width: 1300px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-
-  .header-menu {
-    order: 3;
-  }
-
-  #header .european-flag-head .image {
-    border: none;
-    padding: 0;
-  }
-
-  #header nav ul li {
-    float: none;
-    // padding: 0px;
-    display: table;
-    margin-right: 20px;
-  }
-
-  #header nav ul li a,
-  #header nav ul li label {
-    font-size: 16px !important;
-    transition: all 0.5s ease 0s;
-    font-family: "open_sans", sans-serif;
-    margin-bottom: 0;
-    color: white;
-    font-weight: bold;
-  }
-
-  #header nav ul li a::after {
-    content: "\f078";
-    font-size: 14px;
-    line-height: 3.92rem;
-    line-height: 2.8rem;
-    font-family: "FontAwesome";
-    margin-left: 5px;
-  }
-
-  #header .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 99;
-    // padding: 15px;
-    top: 71px;
-    // margin-top: 3em;
-    width: 100% !important;
-    left: 0;
-    color: black;
-    min-height: 700px;
-  }
-
-  #header .dropdown-content li:first-child a {
-    border: none;
-  }
-
-  #header .dropdown-content li:hover {
-    background-color: #f0f0f0;
-  }
-
-  #header .dropdown-content a {
-    /* border-left: 1px solid #437587; */
-    /* border-bottom: 1px solid #437587; */
-    border: none
-  }
-
-  #header nav ul.dropdown-content li a {
-    color: #000 !important;
-    font-weight: normal;
-    padding: 10px 0 10px 30px;
-    font-size: 16px;
-    display: block;
-    line-height: 1.5;
-  }
-
-  .dropdown-links {
-    border-right: 1px solid #f0f0f0;
-    width: 100%;
-    flex: 0 0 40%;
-  }
-
-  .dropdown-links li a::after {
-    display: none;
-  }
-
-  .dropdown-links__title {
-    color: #000;
-    font-size: 24px;
-    font-weight: 700;
-    padding-left: 10px;
-    padding-top: 20px;
-    letter-spacing: 0;
-    margin-left: 20px;
-    margin-bottom: .5rem;
-    line-height: 1.1;
-  }
-
-  #header nav ul li a:hover {
-    text-decoration: none;
-    color: #8d8d8d !important;
-  }
-
-  #header nav ul.dropdown-content li a:hover {
-    color: black !important;
-  }
-
-  .dropdown-info {
-    align-self: flex-start;
-    padding: 32px 40px;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 10%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
-  }
-
-  .dropdown-info p {
-    margin: 0;
-    text-align: center;
-    font-size: 17px;
-    letter-spacing: 0;
-  }
-
-  .header-menu__item {
-    font-family: "open_sans-bold", sans-serif !important;
-  }
+.menu-button:hover {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
 }
 
-@media (max-width:850px) {
-  #header .logo-dga img {
-    margin-right: 30px;
-  }
-
-  #header nav {
-    flex: 0 0 50%;
-  }
+.arrow {
+  margin-left: 5px;
+  color: #005366;
 }
 
-@media only screen and (max-width: 618px) {
-  #header nav ul li a {
-    color: #fff;
-  }
-
-  #header nav ul:not(.dropdown-content) {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .dropdown-links__title {
-    display: none;
-  }
-
-  #header .content-header-logo img {
-    height: 35px !important;
-  }
+.c-button--logo:focus {
+  background-color: #fdcb33;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: #1f2331;
+  box-shadow: 0 0 transparent, 0 0 transparent, inset 0 -2px 0 0 #1f2331;
 }
 
-@media only screen and (max-width: 1000px) {
-  .dropdown-info {
-    display: none;
-  }
-
-  .dropdown-links {
-    flex: 1;
-  }
-
-  .dropdown-links__title {
-    font-size: 16px;
-  }
+.menu-flex {
+  padding-bottom: 20px !important;
 }

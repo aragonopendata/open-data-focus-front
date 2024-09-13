@@ -241,6 +241,10 @@ export class HeaderComponent implements OnInit {
     window.location.href = this.aodBaseUrl + '/' + page + '?texto=' + params;
   }
 
+  abrirMenu() {
+    document.getElementById('dropdown-menu').className === 'menu' ? document.getElementById('dropdown-menu').className = 'show menu' : document.getElementById('dropdown-menu').className = 'menu';
+  }
+
   abrirDatos() {
     document.getElementById('dropdown-datos').style.display === 'none' ? document.getElementById('dropdown-datos').style.display = 'flex' : document.getElementById('dropdown-datos').style.display = 'none';
     document.getElementById('dropdown-servicios').style.display = 'none'

@@ -2,9 +2,15 @@
 <app-header *ngIf="!edithistory"></app-header> 
 <div class="container-fluid adjust-margin focus" [ngClass]="{'opendatamargin': this.home, 'focus': !this.edithistory}">
 	<div *ngIf="!viewhistory && !edithistory" class="pagina">
-		<h1 class="visualTitle mb-3"  tabindex="{{openedMenu ? -1 : 0}}">OPEN DATA FOCUS</h1>
+		<h2 class="visualTitle mb-3"  tabindex="{{openedMenu ? -1 : 0}}">
+			<div class="container">
+				<span>Open Data Focus</span>
+			</div>
+		</h2>
 		<div class="mb-4" *ngIf="this.home">
-			<p  tabindex="{{openedMenu ? -1 : 0}}">Open Data Focus te permite crear historias y gráficos, en la versión ordenador, con los datos abiertos que dispone Aragón Open Data.</p>
+			<div class="container">
+				<p tabindex="{{openedMenu ? -1 : 0}}">Open Data Focus te permite crear historias y gráficos, en la versión ordenador, con los datos abiertos que dispone Aragón Open Data.</p>
+			</div>
 		</div>
 	</div>
 	<app-migas></app-migas>
