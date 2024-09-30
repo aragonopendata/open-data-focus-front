@@ -298,7 +298,6 @@ a {
   }
 
   #footer .listado {
-    display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(1, 1fr);
     padding: 3rem 0 3rem;
@@ -311,7 +310,7 @@ a {
   }
 
   #footer .footer-policies .listado li {
-    padding: 0rem 1rem 0rem;
+    padding: 0rem 2rem 0rem 0rem;
     position: relative;
     display: inline-block;
     text-align: center;
