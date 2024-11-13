@@ -1,40 +1,45 @@
 # Open Data Focus - Front
 
-## Modificaciones para despliegue
-### Entorno Preproducción
+## Despliegue con docker
 
-Modificar el fichero `src/assets/scss/_open-sans.scss` para que el dominio de las URLs sea `preopendata.aragon.es`
+### Modificaciones
 
-Modificar el fichero `src/styles.scss` para que el dominio de las URLs sea `preopendata.aragon.es`
+#### Global
+**Variables de entorno:**
+```bash
+cp docker-compose-template.yml docker-compose.yml
+```
+Abrimos el archivo `docker-compose.yml` con un editor de texto y hacemos las modificaciones necesarias.
 
-Modificar las siguientes constantes del fichero `app.constants.ts` para que el dominio de las URLs sea `preopendata.aragon.es`:
-* FOCUS_URL
-* AOD_BASE_URL
-* AOD_ASSETS_BASE_URL
-* AOD_API_WEB_BASE_URL
-* AOD_API_ADMIN_BASE_URL
-* AOD_API_SECURITY_BASE_URL
+#### Entorno Producción
+``` bash
+cp .deployment_conf_files/_open-sans-pro.scss src/assets/scss/_open-sans.scss
+cp .deployment_conf_files/app.constants-pro.ts src/app/app.constants.ts
+cp .deployment_conf_files/histories.service-pro.ts src/app/services/histories.service.ts
+cp .deployment_conf_files/styles-pro.scss src/styles.scss
+```
 
-Modificar las siguientes constantes del fichero `app.constants.ts` para que el dominio de las URLs sea `mev-aodfront-01.aragon.local`:
-* AOD_API_CKAN_BASE_URL
+#### Entorno Preproducción
+``` bash
+cp .deployment_conf_files/_open-sans-pre.scss src/assets/scss/_open-sans.scss
+cp .deployment_conf_files/app.constants-pre.ts src/app/app.constants.ts
+cp .deployment_conf_files/histories.service-pre.ts src/app/services/histories.service.ts
+cp .deployment_conf_files/styles-pre.scss src/styles.scss
+```
 
-### Entorno Producción
+#### Entorno Desarrollo
+``` bash
+cp .deployment_conf_files/_open-sans-des.scss src/assets/scss/_open-sans.scss
+cp .deployment_conf_files/app.constants-des.ts src/app/app.constants.ts
+cp .deployment_conf_files/styles-des.scss src/styles.scss
+```
 
-Modificar el fichero `src/assets/scss/_open-sans.scss` para que el dominio de las URLs sea `opendata.aragon.es`
+### Comandos para despliegue
+```bash
+docker compose build
+docker compose up -d
+```
 
-Modificar el fichero `src/styles.scss` para que el dominio de las URLs sea `opendata.aragon.es`
-
-Modificar las siguientes constantes del fichero `app.constants.ts` para que el dominio de las URLs sea `opendata.aragon.es`:
-* FOCUS_URL
-* AOD_BASE_URL
-* AOD_ASSETS_BASE_URL
-* AOD_API_WEB_BASE_URL
-* AOD_API_ADMIN_BASE_URL
-* AOD_API_SECURITY_BASE_URL
-
-Modificar las siguientes constantes del fichero `app.constants.ts` para que el dominio de las URLs sea `mov-aodfront-01.aragon.local`:
-* AOD_API_CKAN_BASE_URL
-
-## Orden de compilado
-
+## Despliegue manual
+### Orden de compilado
 `ng build -prod -bh="/servicios/focus/"`
