@@ -52,6 +52,7 @@
     "@angular/cli": "^1.6.8",
     "@angular/compiler-cli": "5.2.9",
     "@angular/language-service": "5.2.9",
+    "@types/sizzle": "2.3.2",
     "@types/google.analytics": "0.0.36",
     "@types/iframe-resizer": "^3.5.8",
     "@types/jasmine": "2.8.3",
