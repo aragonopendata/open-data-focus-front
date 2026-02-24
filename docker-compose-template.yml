@@ -7,7 +7,7 @@ services:
       args:
         - BASE_HREF="/servicios/datoteca/"
     ports:
-      - "9100:4200"
+      - "9100:80"
     environment:
 #     - NODE_ENV=des, pre or pro
     networks: 
