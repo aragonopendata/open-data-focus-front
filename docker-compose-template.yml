@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        - BASE_HREF="/servicios/focus/"
+        - BASE_HREF="/servicios/datoteca/"
     ports:
       - "9100:4200"
     environment:

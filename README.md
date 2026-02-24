@@ -42,4 +42,4 @@ docker compose up -d
 
 ## Despliegue manual
 ### Orden de compilado
-`ng build -prod -bh="/servicios/focus/"`
+`ng build -prod -bh="/servicios/datoteca/"`

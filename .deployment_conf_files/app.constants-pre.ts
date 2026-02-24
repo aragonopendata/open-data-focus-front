@@ -32,7 +32,7 @@ export class Constants {
   public static PATH_MODIFIER = '';
 
   // URLS FOCUS
-  public static FOCUS_URL = 'https://preopendata.aragon.es/servicios/focus';
+  public static FOCUS_URL = 'https://preopendata.aragon.es/servicios/datoteca';
 
   // URLS GLOBAL
   public static AOD_BASE_URL = 'https://preopendata.aragon.es';
@@ -600,7 +600,7 @@ export class Constants {
   public static ROUTER_LINK_SERVICES_SOCIAL_DATA = 'servicios/open-social-data';
   public static ROUTER_LINK_SERVICES_ANALYTICS = 'servicios/analytics';
   public static ROUTER_LINK_SERVICES_VISUAL_DATA = 'servicios/visualdata';
-  public static ROUTER_LINK_SERVICES_FOCUS = '/servicios/focus';
+  public static ROUTER_LINK_SERVICES_FOCUS = '/servicios/datoteca';
   public static ROUTER_LINK_DATA_PARAM_DATASET_NAME = 'datasetName';
   public static ROUTER_LINK_DATA_PARAM_DATASET_HOMER_NAME = 'datasetHomerName';
   public static ROUTER_LINK_DATA_PARAM_TOPIC_NAME = 'topicName';

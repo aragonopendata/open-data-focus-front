@@ -8,5 +8,5 @@ COPY . .
 
 RUN npm install
 
-CMD node_modules/.bin/ng serve --host 0.0.0.0 --base-href '/servicios/focus/' --disable-host-check
+CMD node_modules/.bin/ng serve --host 0.0.0.0 --base-href '/servicios/datoteca/' --disable-host-check
 
